@@ -1,10 +1,13 @@
-- 👋 Hi, I’m @poliglots
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+- 👋 Hi, I’m @poliglots [A Latvian word for Polyglot(English)] 
+- 👀 In the age of AI, being polyglot makes us more relevant.
+  
+- Love challenging the Architecture and Design of Systems.
+- Likes desigining Low cost, Highly Performant cloud/hybrid Systems.
+- Can Read/Understand almost any code even if it lacks adequate documentation.
+  
+- 🌱 Currently learning EVERYTHING using [Ikigai](https://en.wikipedia.org/wiki/Ikigai)
+
+  
 
 <!---
 poliglots/poliglots is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
