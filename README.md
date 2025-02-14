@@ -4,7 +4,7 @@
   &nbsp;
   
 - Love challenging Architecture and Design of Systems.
-- Likes desigining Low cost, Highly Performant cloud/hybrid Systems.
+- Like desigining Low cost, Highly Performant cloud/hybrid Systems.
 - Can Read/Understand almost any code even if it lacks adequate documentation.
   
   &nbsp;
