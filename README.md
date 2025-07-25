@@ -1,14 +1,4 @@
-- 👋 Hi, I’m @poliglots [A Latvian word for Polyglot(English)] 
-  
-  &nbsp;
-  
-- Love challenging Architecture and Design of Systems.
-- Like desigining Low cost, Highly Performant cloud/hybrid Systems.
-  
-  &nbsp;
-  
-- 🌱 Currently learning EVERYTHING using [Ikigai](https://en.wikipedia.org/wiki/Ikigai)
-
+A story of being noone to someone.
   
 
 <!---
