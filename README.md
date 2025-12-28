@@ -1,6 +1,6 @@
 <h1><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> polyglot.dev</h1>
 <p align="center">
-  <img src="me.svg" alt="polyglot.dev" height="100" width="100"/>
+  <img src="me.svg" alt="polyglot.dev" height="200" width="200"/>
 </p>
 <p>A Full Stack developer from <b>India</b></p>
 <h3>🔭Things I code with</h3>
