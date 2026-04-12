@@ -38,8 +38,8 @@
 ### 📊 GitHub Stats
 
 <p align="center">
-  <img height="175" src="https://github-readme-stats.vercel.app/api?username=poliglots&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=poliglots&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+  <img height="175" src="https://github-readme-stats-salesp07.vercel.app/api?username=poliglots&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <img height="175" src="https://github-readme-stats-salesp07.vercel.app/api/top-langs/?username=poliglots&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
 </p>
 
 <p align="center">
@@ -48,10 +48,11 @@
 
 ---
 
-### 🏆 Trophies
+### 🗂️ Language Breakdown
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=poliglots&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=8" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=poliglots&theme=tokyonight" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=poliglots&theme=tokyonight" />
 </p>
 
 ---
