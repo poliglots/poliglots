@@ -2,11 +2,15 @@
 
 <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif" width="50"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=650&size=26&pause=1000&color=70A5FD&center=true&vCenter=true&width=650&lines=Engineering+Leader+%7C+Staff+Engineer;Technical+Strategy+%7C+People+%7C+Systems;Building+teams+and+systems+that+scale%E2%9A%A1;Delivering+impact+from+code+to+strategy)](https://git.io/typing-svg)
+<p>
+  <img src="https://raw.githubusercontent.com/poliglots/poliglots/snake/github-contribution-grid-snake.svg" alt="contribution-snake" />
+</p>
 
-<p>Engineering Leader · Staff Engineer · <b>India</b></p>
+<p>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=650&size=26&pause=1000&color=70A5FD&center=true&vCenter=true&width=650&lines=Ployglot+Developer+%7C+IoT+%26+Microservices+%7C+Data+Engineering+%7C+Full+Stack;Go+%E2%86%92+Kafka+%E2%86%92+HBase;Node.js+%26+React+%E2%86%92+SPA+UIs;Python+%E2%86%92+Data+Pipelines" />
+</p>
 
-<img src="https://komarev.com/ghpvc/?username=poliglots&color=7c3aed&style=flat-square&label=Profile+Views"/>
+<p><b>India</b> · <img src="https://komarev.com/ghpvc/?username=poliglots&color=7c3aed&style=flat-square&label=Profile+Views" /></p>
 
 </div>
 
@@ -14,71 +18,134 @@
 
 ---
 
-### What I Do
+## 👋 About Me
 
-I bridge the gap between **technical depth** and **organizational impact** — from hands-on code to people leadership.
+I'm a polyglot software developer who builds things across the full stack — from **IoT devices streaming data over Kafka** to **real-time dashboards** and the **data pipelines** that make sense of it all.
 
-> *"Simple systems, automated toil, and teams that ship."*
+> *"Four languages. One mission: ship systems that work at scale."*
 
 <table align="center" width="100%">
   <tr>
     <td align="center" width="25%">
-      <h3>Technical Leadership</h3>
-      <p>Driving architectural decisions, setting engineering standards, and mentoring teams to deliver high-quality systems at scale.</p>
+      <h3>⚡ IoT &amp; Edge Systems</h3>
+      <p>Building connected device ecosystems with Go microservices, Kafka streaming, and HBase time-series storage.</p>
     </td>
     <td align="center" width="25%">
-      <h3>People & Teams</h3>
-      <p>Growing talent through mentorship, building inclusive processes, and scaling engineering organizations for sustained delivery.</p>
+      <h3>🔧 Microservices</h3>
+      <p>Production-ready Go services with gRPC, event-driven patterns, distributed tracing, and resilient architecture.</p>
     </td>
     <td align="center" width="25%">
-      <h3>System Architecture</h3>
-      <p>Designing distributed, resilient systems — event-driven architectures, microservices, and data-intensive platforms.</p>
+      <h3>🎨 Frontend &amp; SPA</h3>
+      <p>Interactive, real-time dashboards with React, TypeScript, and Node.js — from data visualization to state management.</p>
     </td>
     <td align="center" width="25%">
-      <h3>Cross-Functional Impact</h3>
-      <p>Aligning engineering with product, business, and operations to ship features that move the needle.</p>
+      <h3>📊 Data Pipelines</h3>
+      <p>Python-powered ETL pipelines, stream processing, and analytics — turning raw IoT telemetry into actionable insights.</p>
     </td>
   </tr>
 </table>
 
 ---
 
-### Technical Leadership & Systems
+## 🛠 Tech Stack
 
 <div align="center">
 
-| Architecture & Patterns | Scale & Reliability | Strategy & Leadership |
-|:---:|:---:|:---:|
-| Distributed Systems · Event-Driven Architecture · Microservices · CQRS / SAGA · Domain-Driven Design | SLO/SLI Design · Observability (Prometheus, Grafana) · Chaos Engineering · Performance Tuning | Technical Strategy · Mentorship · RFC Process · Cross-Team Influence · Build vs. Buy Decisions |
+### Languages
 
-| Infrastructure & Platforms | Data & Analytics | Languages & Runtime |
-|:---:|:---:|:---:|
-| Kubernetes · Helm · AWS · Terraform | Kafka · OpenSearch · Apache Spark · Data Lake / Warehouse | Java & Spring · Node.js · Golang · Python |
+| Go | TypeScript | JavaScript | Python |
+|:---:|:---:|:---:|:---:|
+| Production microservices | Type-safe frontend | Backend APIs | Data pipelines & scripting |
+
+### Infrastructure & Tools
+
+| Kafka | HBase | Key-Value Stores | Docker & Kubernetes |
+|:---:|:---:|:---:|:---:|
+| Event streaming | Time-series storage | Lightweight persistence | Container orchestration |
+
+### Frontend & Backend
+
+| React | Node.js | gRPC | REST APIs |
+|:---:|:---:|:---:|:---:|
+| SPA & dashboards | Server-side & BFF | High-perf IPC | Service communication |
 
 </div>
 
 ---
 
-### Featured Impact
+## 🚀 Featured Projects
 
-- Scaled distributed systems to handle **10x traffic growth** with **99.99% availability**
-- Led **multi-team migration** from monolith to event-driven microservices architecture
-- Mentored **8+ engineers**, with **3 promoted** to Senior and Staff levels
-- Reduced infrastructure costs by **$500K/year** through capacity optimization and right-sizing
-- Established **engineering standards** and architecture review processes adopted across **5+ teams**
+<div align="center">
 
----
+| Project | Description | Tech |
+|:---|:---|:---|
+| **IoT Platform** | Full IoT system: device ingestion → Kafka → HBase storage → dashboard | `Go` `Kafka` `HBase` `React` |
+| **Microservices Boilerplate** | Production-ready Go microservices scaffold with gRPC, tracing, and testing | `Go` `gRPC` `Docker` |
+| **Data Pipeline Framework** | Python ETL framework for processing and transforming IoT data streams | `Python` `Kafka` `Pandas` |
+| **SPA Dashboard** | Real-time IoT monitoring dashboard with live charts and device controls | `React` `TypeScript` `Node.js` |
+| **KV Store Library** | High-performance key-value store written in Go with snapshotting | `Go` `Concurrent` |
 
-### Currently Exploring
-
-- **Service Mesh** (Istio / Linkerd) at production scale
-- **Observability-driven development** and SRE practices
-- **AI-assisted code reviews** and developer productivity tools
+</div>
 
 ---
 
-### Activity
+## 📂 Repository Structure
+
+This repo (`poliglots`) serves as the central hub for my polyglot work. Each domain lives in its own project:
+
+```
+poliglots/
+├── iot-platform/            # Go-based IoT ingestion & streaming
+├── microservices-boilerplate/  # Go microservices scaffold
+├── data-pipeline/           # Python data ETL & stream processing
+├── react-spa-dashboard/     # React/TS real-time dashboard
+├── kv-store-lib/            # Go key-value store library
+└── polyglot-examples/       # Hello World across Go, TS, Python, Node.js
+```
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<p>
+  <img src="https://github-readme-stats.vercel.app/api?username=poliglots&show_icons=true&theme=tokyo-night&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" />
+</p>
+
+<p>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poliglots&layout=compact&theme=tokyo-night&hide_border=true&langs_count=6" alt="Top Languages" />
+</p>
+
+<p>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=poliglots&theme=tokyo-night&hide_border=true&dates=2020-01-01&current_mode=seasonal" alt="GitHub Streak" />
+</p>
+
+</div>
+
+---
+
+## 🎯 Currently Working On
+
+- **IoT device fleet management** — scaling Go services to handle 10K+ concurrent device connections
+- **Real-time stream processing** — Kafka consumer groups with exactly-once semantics
+- **Dashboard performance** — optimizing React virtualized lists for 100K+ data points
+
+---
+
+## 🔗 Connect
+
+<p>
+  <a href="https://github.com/poliglots">
+    <img src="https://img.shields.io/badge/GitHub-poliglots-181717?style=flat-square&logo=github" alt="GitHub" />
+  </a>
+</p>
+
+---
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=poliglots&theme=tokyo-night&hide_border=true&area=true" />
+  <sub>
+    Built with ☕ and four programming languages. 
+    <a href="https://github.com/poliglots/poliglots">View this profile on GitHub</a>.
+  </sub>
 </p>
