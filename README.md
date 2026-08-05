@@ -3,10 +3,10 @@
 <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif" width="50"/>
 
 <p>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1200&color=70A5FD&center=true&vCenter=true&width=550&lines=IoT+%26+Microservices+Developer;Go+%7C+TypeScript+%7C+Python+%7C+Node.js;Real-time+Systems+%7C+Data+Pipelines+%7C+SPA+Dashboards" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1200&color=70A5FD&center=true&vCenter=true&width=750&lines=IoT+%26+Microservices+Developer;Go+%7C+TypeScript+%7C+Python+%7C+Node.js;Real-time+Systems+%7C+Data+Pipelines+%7C+SPA+Dashboards" />
 </p>
 
-<p><b>India</b> · <img src="https://komarev.com/ghpvc/?username=poliglots&color=7c3aed&style=flat-square&label=Profile+Views" /></p>
+<p><img src="https://komarev.com/ghpvc/?username=poliglots&color=7c3aed&style=flat-square&label=Profile+Views" /></p>
 
 </div>
 
