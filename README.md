@@ -106,15 +106,15 @@ poliglots/
 <div align="center">
 
 <p>
-  <img src="https://github-readme-stats.vercel.app/api?username=poliglots&show_icons=true&theme=tokyo-night&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=poliglots&theme=tokyonight" alt="Profile Details" />
 </p>
 
 <p>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poliglots&layout=compact&theme=tokyo-night&hide_border=true&langs_count=6" alt="Top Languages" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=poliglots&theme=tokyonight" alt="Repos per Language" />
 </p>
 
 <p>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=poliglots&theme=tokyo-night&hide_border=true&dates=2020-01-01&current_mode=seasonal" alt="GitHub Streak" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=poliglots&theme=tokyonight" alt="GitHub Stats" />
 </p>
 
 </div>
