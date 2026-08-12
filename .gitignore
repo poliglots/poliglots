@@ -1,28 +1,3 @@
 # Project files
 PLAN.md
-OSS-CONTRIBUTION-ROADMAP.md
 git-clean.sh
-
-# Dependencies
-node_modules/
-*.pyc
-__pycache__/
-.go
-
-# Build outputs
-dist/
-build/
-*.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# Environment
-.env
-.env.local
-
-# OS
-.DS_Store
-Thumbs.db
