@@ -38,12 +38,21 @@
 
 ---
 
+<!-- PR_SECTION_START -->
 ## 🌟 Open Source Contributions
 
-- **[cloud-hypervisor/cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8720)** — Co-authored PR: `tests: re-enable test_live_migration_tcp_timeout_cancel() + make more robust`
+### 🔵 Open Pull Requests
 
+- **[apache/maven](https://github.com/apache/maven/pull/12753)** — properly implement Clock.withZone() in MonotonicClock
+- **[zitadel/zitadel](https://github.com/zitadel/zitadel/pull/12601)** — preserve user theme preference when branding theme is auto
+- **[opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562)** — use explicit query comparison instead of lodash isEqual
+- **[etcd-io/etcd](https://github.com/etcd-io/etcd/pull/22259)** — v3rpc: add client IP to auth-related log messages
 
----
+### ✅ Merged Pull Requests
+
+- **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51635)** — OIDC client registration scope handling auth enforcement (#51311)
+
+<!-- PR_SECTION_END -->
 
 ## 📊 GitHub Stats
 
