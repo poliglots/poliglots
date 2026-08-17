@@ -3,7 +3,7 @@
 <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif" width="50"/>
 
 <p>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=70A5FD&center=true&vCenter=true&width=750&lines=Polyglot+Software+Developer;Systems+%7C+Full+Stack+%7C+Data+Engineering" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1200&color=70A5FD&center=true&vCenter=true&width=750&lines=Polyglot+Software+Developer;Systems+%7C+Full+Stack+%7C+Data+Engineering" />
 </p>
 
 <div align="center">
@@ -32,6 +32,8 @@
 
 </div>
 
+---
+
 <p><img src="https://komarev.com/ghpvc/?username=poliglots&color=7c3aed&style=flat-square&label=Profile+Views" /></p>
 
 </div>
@@ -41,6 +43,10 @@
 <!-- PR_SECTION_START -->
 ## 🌟 Open Source Contributions
 
+### ✅ Merged Pull Requests
+
+- **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51635)** — OIDC client registration scope handling auth enforcement (#51311)
+
 ### 🔵 Open Pull Requests
 
 - **[apache/maven](https://github.com/apache/maven/pull/12753)** — properly implement Clock.withZone() in MonotonicClock
@@ -48,11 +54,13 @@
 - **[opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562)** — use explicit query comparison instead of lodash isEqual
 - **[etcd-io/etcd](https://github.com/etcd-io/etcd/pull/22259)** — v3rpc: add client IP to auth-related log messages
 
-### ✅ Merged Pull Requests
-
-- **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51635)** — OIDC client registration scope handling auth enforcement (#51311)
-
 <!-- PR_SECTION_END -->
+
+---
+
+### 🤝 Co-Author Contributions *(curated)*
+
+- **[cloud-hypervisor/cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8720)** — Co-authored PR: `tests: re-enable test_live_migration_tcp_timeout_cancel() + make more robust`
 
 ## 📊 GitHub Stats
 
