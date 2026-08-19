@@ -3,7 +3,7 @@
 <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif" width="50"/>
 
 <p>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1200&color=70A5FD&center=true&vCenter=true&width=750&lines=Polyglot+Software+Developer" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1200&color=70A5FD&center=true&vCenter=true&width=450&lines=Polyglot+Software+Developer" />
 </p>
 
 <div align="center">
