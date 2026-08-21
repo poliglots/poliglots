@@ -1,9 +1,10 @@
 name: Update Open Source Contributions
 
 on:
+  create:
+  push:
   schedule:
-    # Run every day at 9 AM UTC
-    - cron: "0 9 * * *"
+    - cron: "21 */6 * * *"
   workflow_dispatch: # Allows manual trigger
 
 permissions:
