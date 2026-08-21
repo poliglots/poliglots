@@ -32,6 +32,8 @@
 
 ### 🔵 Open Pull Requests
 
+- **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51877)** — Prevent SAML OneTimeUse assertion replay in IdP-Initiated broker flow
+- **[tikv/tikv](https://github.com/tikv/tikv/pull/20011)** — raftstore: pass RaftCmdExtraOpts through local read path to enable deadline cancellation
 - **[apache/maven](https://github.com/apache/maven/pull/12753)** — properly implement Clock.withZone() in MonotonicClock
 - **[zitadel/zitadel](https://github.com/zitadel/zitadel/pull/12601)** — preserve user theme preference when branding theme is auto
 - **[opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562)** — use explicit query comparison instead of lodash isEqual
