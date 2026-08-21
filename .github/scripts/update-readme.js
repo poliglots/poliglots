@@ -36,7 +36,6 @@ const END_MARKER = "<!-- PR_SECTION_END -->";
 const DRY_RUN = process.env.DRY_RUN === "true";
 const AUTHOR_NAME = process.env.COMMIT_AUTHOR_NAME || "GitHub Actions";
 const AUTHOR_EMAIL = process.env.COMMIT_AUTHOR_EMAIL || "actions@github.com";
-const TARGET_BRANCH = process.env.PR_BRANCH || "main";
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -142,7 +141,7 @@ function main() {
     return;
   }
 
-  // Configure git and commit
+  // Configure git and commit directly to main
   console.log("🔧 Configuring git...");
   try {
     run(`git config user.name "${AUTHOR_NAME}"`);
@@ -152,42 +151,19 @@ function main() {
     return;
   }
 
-  // Stage and commit
-  const branch = `update/prs/${new Date().toISOString().slice(0, 10)}`;
-  console.log(`🌿 Checking out branch: ${branch}`);
-  run(`git checkout -b ${branch} ${TARGET_BRANCH} 2>/dev/null || git checkout -b ${branch}`);
-
   run("git add README.md");
   run(
     `git commit -m "docs(readme): update open source contributions [skip ci]"`
   );
 
-  console.log("✅ Committed changes.");
-
-  // Push the branch
-  console.log("📤 Pushing branch...");
+  // Push directly to main (safe because the token has write access)
+  console.log("📤 Pushing to main...");
   try {
-    run(`git push origin ${branch}`);
+    run(`git push origin main`);
+    console.log("✅ README.md updated on main!");
   } catch (e) {
-    console.error("⚠️  Could not push branch:", e.message);
-    console.log("\n📝 Commit created locally. Branch:", branch);
-    return;
-  }
-
-  console.log("✅ Branch pushed.");
-
-  // Create PR
-  console.log("🔀 Creating pull request...");
-  try {
-    const prResult = run(
-      `gh pr create --base ${TARGET_BRANCH} --head ${branch} --title "docs(readme): update open source contributions" --body "Automatically updated open source contributions section."`
-    );
-    console.log("✅ Pull request created!");
-    console.log(prResult);
-  } catch (e) {
-    console.error("⚠️  Could not create PR:", e.message);
-    console.log("\n📝 Branch pushed. Create PR manually:");
-    console.log(`   gh pr create --base ${TARGET_BRANCH} --head ${branch}`);
+    console.error("⚠️  Could not push to main:", e.message);
+    console.log("   This may happen if no changes were made (README already up to date).");
   }
 }
 
