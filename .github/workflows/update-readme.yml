@@ -36,4 +36,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_AUTHOR_NAME: "GitHub Actions"
           COMMIT_AUTHOR_EMAIL: "actions@github.com"
-          PR_BRANCH: "main"
