@@ -48,18 +48,11 @@
 
 <div align="center">
 
-<p>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=poliglots&theme=transparent" alt="Profile Details" />
-</p>
 
-<p>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=poliglots&theme=transparent" alt="GitHub Stats" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=poliglots&theme=transparent" alt="Repos per Language" />
-</p>
+[![](https://raw.githubusercontent.com/poliglots/poliglots/main/profile-summary-card-output/transparent/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://raw.githubusercontent.com/poliglots/poliglots/main/profile-summary-card-output/transparent/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/poliglots/poliglots/main/profile-summary-card-output/transparent/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://raw.githubusercontent.com/poliglots/poliglots/main/profile-summary-card-output/transparent/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/poliglots/poliglots/main/profile-summary-card-output/transparent/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 
-<p>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=poliglots&theme=transparent" alt="Top Languages By Commit" />
-</p>
 
 </div>
 
