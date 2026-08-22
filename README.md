@@ -32,6 +32,7 @@
 
 ### 🔵 Open Pull Requests
 
+- **[cloud-hypervisor/cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8770)** — vmm: Set reserve=on by default when hugepages=on
 - **[opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562)** — use explicit query comparison instead of lodash isEqual
 - **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51877)** — Prevent SAML OneTimeUse assertion replay in IdP-Initiated broker flow
 - **[tikv/tikv](https://github.com/tikv/tikv/pull/20011)** — raftstore: pass RaftCmdExtraOpts through local read path to enable deadline cancellation
