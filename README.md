@@ -28,11 +28,11 @@
 
 ### ✅ Merged Pull Requests
 
+- **[apache/maven](https://github.com/apache/maven/pull/12753)** — properly implement Clock.withZone() in MonotonicClock
 - **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51635)** — OIDC client registration scope handling auth enforcement (#51311)
 
 ### 🔵 Open Pull Requests
 
-- **[apache/maven](https://github.com/apache/maven/pull/12753)** — properly implement Clock.withZone() in MonotonicClock
 - **[cloud-hypervisor/cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8770)** — vmm: Set reserve=on by default when hugepages=on
 - **[opensearch-project/OpenSearch-Dashboards](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562)** — use explicit query comparison instead of lodash isEqual
 - **[keycloak/keycloak](https://github.com/keycloak/keycloak/pull/51877)** — Prevent SAML OneTimeUse assertion replay in IdP-Initiated broker flow
