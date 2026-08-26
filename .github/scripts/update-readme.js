@@ -160,7 +160,7 @@ function main() {
   // Push directly to main (safe because the token has write access)
   console.log(`📤 Pushing to "${TARGET_BRANCH}"...`);
   try {
-    run(`git push origin "${TARGET_BRANCH}"`);
+    run(`git push -u origin "${TARGET_BRANCH}"`);
     console.log(`✅ README.md updated on "${TARGET_BRANCH}"!`);
   } catch (e) {
     console.error(`⚠️  Could not push to "${TARGET_BRANCH}":`, e.message);
