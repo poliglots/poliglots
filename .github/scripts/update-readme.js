@@ -142,6 +142,14 @@ function main() {
     return;
   }
 
+  console.log(`🌿 Ensuring local branch is set to "${TARGET_BRANCH}"...`);
+  try {
+    run(`git checkout -b "${TARGET_BRANCH}"`);
+  } catch {
+    // If the branch already exists locally from a prior action, just switch to it
+    run(`git checkout "${TARGET_BRANCH}"`);
+  }
+
   // Configure git and commit directly to main
   console.log("🔧 Configuring git...");
   try {
