@@ -32,9 +32,8 @@ jobs:
         run: |
           node .github/scripts/fetch-prs.js poliglots
           node .github/scripts/update-readme.js
-        with:
-          target_branch: prs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_AUTHOR_NAME: "GitHub Actions"
           COMMIT_AUTHOR_EMAIL: "actions@github.com"
+          TARGET_BRANCH: "prs"

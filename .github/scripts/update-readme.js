@@ -36,6 +36,7 @@ const END_MARKER = "<!-- PR_SECTION_END -->";
 const DRY_RUN = process.env.DRY_RUN === "true";
 const AUTHOR_NAME = process.env.COMMIT_AUTHOR_NAME || "GitHub Actions";
 const AUTHOR_EMAIL = process.env.COMMIT_AUTHOR_EMAIL || "actions@github.com";
+const TARGET_BRANCH = process.env.TARGET_BRANCH || "prs";
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -157,12 +158,12 @@ function main() {
   );
 
   // Push directly to main (safe because the token has write access)
-  console.log("📤 Pushing to main...");
+  console.log(`📤 Pushing to "${TARGET_BRANCH}"...`);
   try {
-    run(`git push origin main`);
-    console.log("✅ README.md updated on main!");
+    run(`git push origin "${TARGET_BRANCH}"`);
+    console.log(`✅ README.md updated on "${TARGET_BRANCH}"!`);
   } catch (e) {
-    console.error("⚠️  Could not push to main:", e.message);
+    console.error(`⚠️  Could not push to "${TARGET_BRANCH}":`, e.message);
     console.log("   This may happen if no changes were made (README already up to date).");
   }
 }
