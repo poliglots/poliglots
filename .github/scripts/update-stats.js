@@ -105,8 +105,18 @@ query($login: String!) {
 }
 `;
 
-function fetchUserLogin() {
-  return ghApi("user", "--jq '.login'").trim();
+function fetchUsername() {
+  // GITHUB_TOKEN cannot access /user endpoint (403).
+  // Use gh repo view to get the owner, which works with repo-scoped tokens.
+  const output = execSync(
+    "gh repo view --json owner -q '.owner.login'",
+    {
+      encoding: "utf8",
+      cwd: REPO_ROOT,
+      stdio: ["pipe", "pipe", "pipe"],
+    }
+  );
+  return output.trim();
 }
 
 function fetchLanguagesByCommit(username) {
@@ -119,6 +129,9 @@ function fetchLanguagesByCommit(username) {
   }
 
   const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
+  if (!repos || repos.length === 0) {
+    return "```\nNo data available\n```";
+  }
   if (repos.length === 0) {
     return "```\nNo data available\n```";
   }
@@ -151,7 +164,7 @@ function fetchOpenPRs(username) {
   if (response.errors) {
     return 0;
   }
-  return response?.data?.user?.pullRequests?.totalCount || 0;
+  return response?.data?.user?.pullRequests?.totalCount ?? 0;
 }
 
 function fetchMergedPRs(username) {
@@ -160,7 +173,7 @@ function fetchMergedPRs(username) {
   if (response.errors) {
     return 0;
   }
-  return response?.data?.user?.pullRequests?.totalCount || 0;
+  return response?.data?.user?.pullRequests?.totalCount ?? 0;
 }
 
 function fetchTopRepos(username) {
@@ -172,7 +185,7 @@ function fetchTopRepos(username) {
   }
 
   const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
-  if (repos.length === 0) {
+  if (!repos || repos.length === 0) {
     return "```\nNo external repos\n```";
   }
 
@@ -201,7 +214,10 @@ function fetchCommitStats(username) {
     return { commits: 0, issues: 0, reviews: 0, prs: 0 };
   }
 
-  const coll = response?.data?.user?.contributionsCollection;
+  const coll = response?.data?.user?.contributionsCollection || {};
+  if (!response?.data?.user) {
+    return { commits: 0, issues: 0, reviews: 0, prs: 0 };
+  }
   return {
     commits: coll?.totalCommitContributions || 0,
     issues: coll?.totalIssueContributions || 0,
@@ -257,7 +273,7 @@ function updateREADME(statsSection) {
 function main() {
   console.log("🔍 Gathering GitHub statistics...");
 
-  const username = fetchUserLogin();
+  const username = fetchUsername();
   console.log(`  📦 User: @${username}`);
 
   const languages = fetchLanguagesByCommit(username);
