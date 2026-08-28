@@ -1,0 +1,125 @@
+name: GitHub Metrics
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: POLYGON
+          user: poliglots
+          base: ""
+          config_timezone: UTC
+          output_file: metrics.svg
+
+          # Plugins
+          plugins.users.enabled: yes
+          plugins.achievements.enabled: yes
+          plugins.sponsor.enabled: no
+          plugins.support.enabled: no
+          plugins.habits.enabled: no
+          plugins.habits.facts.enabled: yes
+          plugins.infrastructure.used.services.enabled: no
+          plugins.infrastructure.used.platforms.enabled: no
+
+          # User configuration
+          user_name: true
+          user_target: poliglots
+
+          # Commits
+          commits.authors: poliglots
+          
+          # Base sections
+          base:
+            divider: true
+            background: 00000000
+            padding: 25px
+            avatar:
+              size: 200
+              pruning: any
+              types: ["svg", "png", "jpg", "gif"]
+              border: 0
+            header:
+              title: poliglots
+              maxlength: 40
+              maxlength_lines: 2
+              icon: true
+              padding: 10px
+            location: 
+              country: true
+
+          # Activity section
+          activity:
+            enabled: yes
+            limit: 5
+            title: Recent Activity
+            filters:
+              repos: []
+
+          # Achievements section
+          achievements:
+            enabled: yes
+            title: Achievements
+            density: 5
+            layout: compact
+            themes:
+              - tech
+              - gaming
+              - productivity
+
+          # Repositories section
+          repositories:
+            enabled: yes
+            title: Repositories
+            layout: compact
+            model: recently_updated
+            stargazers: true
+            forks: true
+            size: true
+            weighted: true
+            folders: ["open-source", "pinned", "main"]
+            folding:
+              enabled: true
+              archived: false
+              forks: false
+
+          # Languages section
+          languages:
+            enabled: yes
+            title: Languages
+            limit: 8
+            detailed: yes
+            icons: yes
+            colors:
+              - "#f0523f"
+              - "#2b6cb0"
+              - "#568a03"
+              - "#8874bb"
+              - "#e97b16"
+              - "#17a2b8"
+              - "#ff4f6f"
+              - "#9b59b6"
+
+          # Open source section
+          open_source:
+            enabled: yes
+            title: Open Source Contributions
+
+          # Following section
+          following:
+            enabled: yes
+            title: Following
+            limit: 8
+
+          # Templates
+          template: landscape
+          footer: false
+
+          # Gists
+          gists: false
