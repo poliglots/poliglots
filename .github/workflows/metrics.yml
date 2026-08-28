@@ -1,7 +1,9 @@
 name: GitHub Metrics
 on:
+  create:
+  push:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "23 */7 * * *"
   workflow_dispatch:
 
 jobs:
