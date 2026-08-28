@@ -12,9 +12,8 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          token: POLYGON
+          token: ${{ secrets.GITHUB_TOKEN }}
           user: poliglots
-          base: ""
           config_timezone: UTC
           output_file: metrics.svg
 
@@ -35,24 +34,19 @@ jobs:
           # Commits
           commits.authors: poliglots
           
-          # Base sections
-          base:
-            divider: true
-            background: 00000000
-            padding: 25px
-            avatar:
-              size: 200
-              pruning: any
-              types: ["svg", "png", "jpg", "gif"]
-              border: 0
-            header:
-              title: poliglots
-              maxlength: 40
-              maxlength_lines: 2
-              icon: true
-              padding: 10px
-            location: 
-              country: true
+          base.divider: true
+          base.background: 00000000
+          base.padding: 25px
+          base.avatar.size: 200
+          base.avatar.pruning: any
+          base.avatar.types: ["svg", "png", "jpg", "gif"]
+          base.avatar.border: 0
+          base.header.title: poliglots
+          base.header.maxlength: 40
+          base.header.maxlength_lines: 2
+          base.header.icon: true
+          base.header.padding: 10px
+          base.location.country: true
 
           # Activity section
           activity:
