@@ -25,11 +25,15 @@ jobs:
         run: |
           chmod +x .github/scripts/update-stats.sh
           bash .github/scripts/update-stats.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_AUTHOR_NAME: "GitHub Actions"
+          COMMIT_AUTHOR_EMAIL: "actions@github.com"
 
       - name: Commit and push changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add README.md
           if git diff --staged --quiet; then
             echo "No changes to commit"
