@@ -1,5 +1,3 @@
----
-
 <!-- LANGUAGES_STATS_START -->
 
 <div align="center">
@@ -58,7 +56,5 @@ TypeScript            14.3% ███████
   
 **Building the future, one commit at a time.** 🚀
 
-
-</div>
 
 </div>
