@@ -3,8 +3,8 @@ set -e
 
 # Stats collection script for README.md
 # Uses GITHUB_TOKEN (provided by GitHub Actions)
+# Uses Node.js and gh CLI only — no Python
 
-TOKEN="${GITHUB_TOKEN}"
 ORG="poliglots"
 README_FILE="README.md"
 
@@ -12,66 +12,32 @@ echo "🔍 Gathering GitHub statistics..."
 
 # --- 1. Languages by Commit ---
 echo "  → Fetching languages data..."
-languages_json=$(curl -s -H "Authorization: token $TOKEN" \
-  "https://api.github.com/repos/$ORG/poliglots/languages")
-
-languages=$(echo "$languages_json" | python3 << 'PYEOF'
-import sys, json
-data = json.loads(sys.stdin.read())
-if not data:
-    print("```\\nNo data available```")
-    sys.exit(0)
-total = sum(data.values())
-items = sorted(data.items(), key=lambda x: x[1], reverse=True)
-for lang, bytes_count in items:
-    pct = (bytes_count / total) * 100
-    bar = "█" * int(pct / 2)
-    print(f"{lang:20} {pct:5.1f}% {bar}")
-PYEOF
-)
+languages=$(gh api "repos/$ORG/poliglots/languages" --jq '
+  to_entries | map(.value) | add as $total |
+  sort_by(.value) | reverse |
+  .[] |
+  "\(.key | lpad(20;" ")) \((.value / $total * 100) | . * 10 | round / 10)\"% \(" + ("█" * (.value / $total * 100 / 2 | floor)) + ")"
+')
 
 # --- 2. No. of PRs Merged (closed PRs) ---
 echo "  → Fetching merged PRs..."
-merged_prs=$(curl -s -H "Authorization: token $TOKEN" \
-  "https://api.github.com/search/issues?q=repo:$ORG/poliglots+type:pr+state:closed" | \
-  python3 -c "import sys, json; print(json.load(sys.stdin).get('total_count', 0))")
+merged_prs=$(gh search issues "repo:$ORG/poliglots type:pr state:closed" --json total_count --jq '.total_count')
 
 # --- 3. No. of PRs Open ---
 echo "  → Fetching open PRs..."
-open_prs=$(curl -s -H "Authorization: token $TOKEN" \
-  "https://api.github.com/search/issues?q=repo:$ORG/poliglots+type:pr+state:open" | \
-  python3 -c "import sys, json; print(json.load(sys.stdin).get('total_count', 0))")
+open_prs=$(gh search issues "repo:$ORG/poliglots type:pr state:open" --json total_count --jq '.total_count')
 
 # --- 4. Top Repos Contributed To ---
 echo "  → Fetching top repos..."
-top_repos=$(curl -s -H "Authorization: token $TOKEN" \
-  "https://api.github.com/orgs/$ORG/repos?per_page=100&sort=updated&direction=desc" | \
-  python3 << 'PYEOF'
-import sys, json
-data = json.loads(sys.stdin.read())
-if not data:
-    print("```\\nNo repos found```")
-    sys.exit(0)
-# Filter out the repo itself (poliglots/poliglots)
-repos = [r for r in data if r['full_name'] != 'poliglots/poliglots']
-# Sort by stars, then forks
-repos = sorted(repos, key=lambda x: (x.get('stargazers_count', 0), x.get('forks_count', 0)), reverse=True)[:10]
-if not repos:
-    print("```\\nNo external repos```")
-    sys.exit(0)
-for r in repos:
-    name = r['full_name']
-    stars = r.get('stargazers_count', 0)
-    forks = r.get('forks_count', 0)
-    lang = r.get('language', 'N/A')
-    print(f"• {name} ⭐{stars} 🍴{forks} ({lang})")
-PYEOF
-)
-
-# --- Generate timestamp ---
-timestamp=$(date -u '+%Y-%m-%d %H:%M UTC')
+top_repos=$(gh api "orgs/$ORG/repos?per_page=100&sort=updated&direction=desc" --jq '
+  [.[] | select(.full_name != "poliglots/poliglots")]
+  | sort_by(.stargazers_count, .forks_count) | reverse | .[:10]
+  | .[] |
+  "• \(.full_name) ⭐\(.stargazers_count) 🍴\(.forks_count) (\(.language // "N/A"))"
+')
 
 # --- Build stats section ---
+timestamp=$(date -u '+%Y-%m-%d %H:%M UTC')
 stats_section=$(cat << EOF
 <!-- STATS_MARKER_START -->
 

@@ -22,8 +22,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Gather and update stats
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x .github/scripts/update-stats.sh
           bash .github/scripts/update-stats.sh
