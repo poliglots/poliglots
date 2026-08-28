@@ -234,36 +234,51 @@ function updateREADME(statsSection) {
   const startMarker = "<!-- STATS_MARKER_START -->";
   const endMarker = "<!-- STATS_MARKER_END -->";
 
+  // Check for HTML comment markers first
   const startIdx = readme.indexOf(startMarker);
   const endIdx = readme.indexOf(endMarker);
 
-  let newReadme;
-  if (startIdx === -1 || endIdx === -1) {
-    // Markers don't exist — append before the footer section
-    const footerIndex = readme.indexOf("Building the future");
-    if (footerIndex !== -1) {
-      newReadme =
-        readme.substring(0, footerIndex) +
-        "\n" +
-        statsSection +
-        readme.substring(footerIndex);
-    } else {
-      console.log("⚠️  Stats markers not found. Appending to end.");
-      newReadme = readme + "\n" + statsSection;
-    }
-  } else {
-    // Replace existing section
-    newReadme =
+  if (startIdx !== -1 && endIdx !== -1) {
+    // Replace existing section (markers exist)
+    const newReadme =
       readme.substring(0, startIdx) +
       statsSection +
       readme.substring(endIdx + endMarker.length);
-  }
-
-  if (newReadme === readme) {
-    console.log("✅ No changes needed. README.md is up to date.");
+    if (newReadme === readme) {
+      console.log("✅ No changes needed. README.md is up to date.");
+      return;
+    }
+    fs.writeFileSync(README_PATH, newReadme);
+    console.log("✅ README.md updated successfully!");
     return;
   }
 
+  // Markers don't exist — find content between anchors
+  const statsAnchor = "### 📊 Project Statistics";
+  const footerAnchor = "**Building the future, one commit at a time.**";
+  const anchorStart = readme.indexOf(statsAnchor);
+  const anchorEnd = readme.indexOf(footerAnchor);
+
+  if (anchorStart !== -1 && anchorEnd !== -1) {
+    // Replace content between the two anchors
+    const newReadme =
+      readme.substring(0, anchorStart) +
+      "\n" +
+      statsSection +
+      "\n" +
+      readme.substring(anchorEnd);
+    if (newReadme === readme) {
+      console.log("✅ No changes needed. README.md is up to date.");
+      return;
+    }
+    fs.writeFileSync(README_PATH, newReadme);
+    console.log("✅ README.md updated successfully!");
+    return;
+  }
+
+  // Fallback: markers don't exist, append to end
+  console.log("⚠️  Stats section not found. Appending to end.");
+  const newReadme = readme + "\n" + statsSection;
   fs.writeFileSync(README_PATH, newReadme);
   console.log("✅ README.md updated successfully!");
 }
