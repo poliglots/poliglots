@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * update-stats.js - Gather GitHub statistics and update README.md.
+ * update-stats.js - Gather GitHub user statistics and update README.md.
  *
- * This script fetches language data, PR counts, and top repos from GitHub
- * using `gh api`, then updates the README.md between STATS markers.
+ * This script fetches languages by commit, PR counts (open/merged),
+ * and contribution stats for the authenticated user across all repos
+ * using `gh api graphql`, then updates the README.md between STATS markers.
  *
  * Environment variables:
  *   GITHUB_TOKEN - Auto-detected via gh CLI in GitHub Actions
@@ -16,8 +17,6 @@ const path = require("path");
 
 // ─── Configuration ───────────────────────────────────────────────────────────
 
-const REPO = "poliglots";
-
 // Resolve paths relative to the repo root (parent of .github/)
 const SCRIPT_DIR = path.dirname(__filename);
 const REPO_ROOT = path.resolve(SCRIPT_DIR, "../..");
@@ -25,8 +24,8 @@ const README_PATH = path.join(REPO_ROOT, "README.md");
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-function ghApi(path, flags = "") {
-  const cmd = `gh api "repos/${REPO}/${path}" ${flags}`.trim();
+function ghApi(endpoint, flags = "") {
+  const cmd = `gh api "${endpoint}" ${flags}`.trim();
   try {
     return execSync(cmd, {
       encoding: "utf8",
@@ -39,109 +38,176 @@ function ghApi(path, flags = "") {
   }
 }
 
-function ghOrgApi(path, flags = "") {
-  const cmd = `gh api "orgs/${ORG}/${path}" ${flags}`.trim();
+function gqlFetch(query, variables) {
+  const fields = Object.entries(variables)
+    .map(([key, value]) => `--field ${key}="${value}"`)
+    .join(" ");
+  const cmd = `gh api graphql -f query='${query.trim()}' ${fields}`;
   try {
-    return execSync(cmd, {
+    const output = execSync(cmd, {
       encoding: "utf8",
       cwd: REPO_ROOT,
       stdio: ["pipe", "pipe", "pipe"],
     });
+    return JSON.parse(output);
   } catch (error) {
-    console.error(`❌ gh api org error: ${error.stderr || error.message}`);
+    console.error(`❌ gh api graphql error: ${error.stderr || error.message}`);
     throw error;
-  }
-}
-
-function ghSearch(query) {
-  try {
-    const output = execSync(
-      `gh search issues "${query}" --json total_count`,
-      {
-        encoding: "utf8",
-        cwd: REPO_ROOT,
-        stdio: ["pipe", "pipe", "pipe"],
-      }
-    );
-    const json = JSON.parse(output);
-    return json.total_count;
-  } catch (error) {
-    console.error(`❌ gh search error: ${error.stderr || error.message}`);
-    return 0;
   }
 }
 
 // ─── Data Fetching ───────────────────────────────────────────────────────────
 
-function fetchLanguages() {
-  console.log("  → Fetching languages data...");
-  const raw = ghApi("languages", "--jq '. | to_entries | map(.value) | add'");
-  const total = parseInt(raw.trim(), 10);
-  if (!total || total === 0) {
+const CONTRIBUTIONS_QUERY = `
+query($login: String!) {
+  user(login: $login) {
+    contributionsCollection {
+      totalCommitContributions
+      totalPullRequestContributions
+      totalPullRequestReviewContributions
+      totalIssueContributions
+    }
+    repositoriesContributedTo(
+      first: 100
+      contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
+    ) {
+      totalCount
+      nodes {
+        nameWithOwner
+        stargazerCount
+        forkCount
+        primaryLanguage {
+          name
+        }
+      }
+    }
+  }
+}
+`;
+
+const OPEN_PRS_QUERY = `
+query($login: String!) {
+  user(login: $login) {
+    pullRequests(first: 1, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      totalCount
+    }
+  }
+}
+`;
+
+const MERGED_PRS_QUERY = `
+query($login: String!) {
+  user(login: $login) {
+    pullRequests(first: 1, states: MERGED, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      totalCount
+    }
+  }
+}
+`;
+
+function fetchUserLogin() {
+  return ghApi("user", "--jq '.login'").trim();
+}
+
+function fetchLanguagesByCommit(username) {
+  console.log("  → Fetching languages by commit...");
+
+  const response = gqlFetch(CONTRIBUTIONS_QUERY, { login: username });
+  if (response.errors) {
+    console.error("❌ GraphQL errors:", JSON.stringify(response.errors, null, 2));
     return "```\nNo data available\n```";
   }
 
-  const entriesRaw = ghApi(
-    "languages",
-    "--jq '. | to_entries | sort_by(.value) | reverse'"
-  );
-  const entries = JSON.parse(entriesRaw);
+  const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
+  if (repos.length === 0) {
+    return "```\nNo data available\n```";
+  }
 
-  const lines = entries.map(({ key: lang, value: bytes }) => {
-    const pct = ((bytes / total) * 100).toFixed(1);
-    const blocks = Math.round((bytes / total) * 50);
+  // Aggregate languages across all contributed repos
+  const langMap = {};
+  for (const repo of repos) {
+    const lang = repo.primaryLanguage?.name;
+    if (lang) {
+      langMap[lang] = (langMap[lang] || 0) + 1;
+    }
+  }
+
+  const entries = Object.entries(langMap).sort((a, b) => b[1] - a[1]);
+  const totalRepos = entries.reduce((sum, [, count]) => sum + count, 0);
+
+  const lines = entries.map(([lang, count]) => {
+    const pct = ((count / totalRepos) * 100).toFixed(1);
+    const blocks = Math.round((count / totalRepos) * 50);
     const bar = "█".repeat(blocks);
     return `${lang.padEnd(20)} ${pct.padStart(5)}% ${bar}`;
   });
 
-  return `\`\`\`\n${lines.join("\n")}\n\`\`\``;
+  return "```\n" + lines.join("\n") + "\n```";
 }
 
-function fetchMergedPRs() {
-  console.log("  → Fetching merged PRs...");
-  const count = ghSearch(
-    `repo:${ORG}/${REPO} type:pr state:closed`
-  );
-  return count;
-}
-
-function fetchOpenPRs() {
+function fetchOpenPRs(username) {
   console.log("  → Fetching open PRs...");
-  const count = ghSearch(`repo:${ORG}/${REPO} type:pr state:open`);
-  return count;
+  const response = gqlFetch(OPEN_PRS_QUERY, { login: username });
+  if (response.errors) {
+    return 0;
+  }
+  return response?.data?.user?.pullRequests?.totalCount || 0;
 }
 
-function fetchTopRepos() {
+function fetchMergedPRs(username) {
+  console.log("  → Fetching merged PRs...");
+  const response = gqlFetch(MERGED_PRS_QUERY, { login: username });
+  if (response.errors) {
+    return 0;
+  }
+  return response?.data?.user?.pullRequests?.totalCount || 0;
+}
+
+function fetchTopRepos(username) {
   console.log("  → Fetching top repos...");
-  const raw = ghOrgApi(
-    "repos?per_page=100&sort=updated&direction=desc",
-    "--paginate"
-  );
-  const repos = JSON.parse(raw);
-  if (!repos || repos.length === 0) {
+
+  const response = gqlFetch(CONTRIBUTIONS_QUERY, { login: username });
+  if (response.errors) {
     return "```\nNo repos found\n```";
   }
 
-  // Filter out the repo itself and sort by stars then forks
-  const filtered = repos
-    .filter((r) => r.full_name !== `${ORG}/${REPO}`)
-    .sort(
-      (a, b) =>
-        (b.stargazers_count - a.stargazers_count) ||
-        (b.forks_count - a.forks_count)
-    )
-    .slice(0, 10);
-
-  if (filtered.length === 0) {
+  const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
+  if (repos.length === 0) {
     return "```\nNo external repos\n```";
   }
 
-  const lines = filtered.map((r) => {
-    const lang = r.language || "N/A";
-    return `• ${r.full_name} ⭐${r.stargazers_count} 🍴${r.forks_count} (${lang})`;
+  // Sort by stars, then forks
+  const sorted = repos
+    .sort(
+      (a, b) =>
+        (b.stargazerCount || 0) - (a.stargazerCount || 0) ||
+        (b.forkCount || 0) - (a.forkCount || 0)
+    )
+    .slice(0, 10);
+
+  const lines = sorted.map((r) => {
+    const lang = r.primaryLanguage?.name || "N/A";
+    return `• ${r.nameWithOwner} ⭐${r.stargazerCount} 🍴${r.forkCount} (${lang})`;
   });
 
-  return `\`\`\`\n${lines.join("\n")}\n\`\`\``;
+  return "```\n" + lines.join("\n") + "\n```";
+}
+
+function fetchCommitStats(username) {
+  console.log("  → Fetching commit stats...");
+
+  const response = gqlFetch(CONTRIBUTIONS_QUERY, { login: username });
+  if (response.errors) {
+    return { commits: 0, issues: 0, reviews: 0, prs: 0 };
+  }
+
+  const coll = response?.data?.user?.contributionsCollection;
+  return {
+    commits: coll?.totalCommitContributions || 0,
+    issues: coll?.totalIssueContributions || 0,
+    reviews: coll?.totalPullRequestReviewContributions || 0,
+    prs: coll?.totalPullRequestContributions || 0,
+  };
 }
 
 // ─── README Update ───────────────────────────────────────────────────────────
@@ -191,10 +257,14 @@ function updateREADME(statsSection) {
 function main() {
   console.log("🔍 Gathering GitHub statistics...");
 
-  const languages = fetchLanguages();
-  const mergedPRs = fetchMergedPRs();
-  const openPRs = fetchOpenPRs();
-  const topRepos = fetchTopRepos();
+  const username = fetchUserLogin();
+  console.log(`  📦 User: @${username}`);
+
+  const languages = fetchLanguagesByCommit(username);
+  const mergedPRs = fetchMergedPRs(username);
+  const openPRs = fetchOpenPRs(username);
+  const topRepos = fetchTopRepos(username);
+  const commits = fetchCommitStats(username);
 
   const timestamp = new Date()
     .toISOString()
@@ -251,6 +321,7 @@ ${topRepos}
   console.log("   📊 Languages: collected");
   console.log(`   ✅ Merged PRs: ${mergedPRs}`);
   console.log(`   🔓 Open PRs: ${openPRs}`);
+  console.log(`   💬 Commits: ${commits.commits}, Issues: ${commits.issues}, Reviews: ${commits.reviews}`);
   console.log("   📁 Top repos: collected");
 }
 
