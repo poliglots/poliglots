@@ -30,57 +30,48 @@ jobs:
           plugins.infrastructure.used.platforms.enabled: no
 
           # Base configuration
-          base:
-            divider: true
-            background: 00000000
-            padding: 25px
-            header:
-              title: poliglots
-              icon: true
-            location:
-              country: true
+          base.divider: true
+          base.background: 00000000
+          base.padding: 25px
+          base.header.title: poliglots
+          base.header.icon: true
+          base.location.country: true
 
           # Activity
-          activity:
-            enabled: yes
-            limit: 5
-            title: Recent Activity
+          activity.enabled: yes
+          activity.limit: 5
+          activity.title: Recent Activity
 
           # Achievements
-          achievements:
-            enabled: yes
-            title: Achievements
-            density: 5
-            layout: compact
+          achievements.enabled: yes
+          achievements.title: Achievements
+          achievements.density: 5
+          achievements.layout: compact
 
           # Repositories
-          repositories:
-            enabled: yes
-            title: Repositories
-            layout: compact
-            model: recently_updated
-            stargazers: true
-            forks: true
-            size: true
+          repositories.enabled: yes
+          repositories.title: Repositories
+          repositories.layout: compact
+          repositories.model: recently_updated
+          repositories.stargazers: true
+          repositories.forks: true
+          repositories.size: true
 
           # Languages
-          languages:
-            enabled: yes
-            title: Languages
-            limit: 8
-            detailed: yes
-            icons: yes
+          languages.enabled: yes
+          languages.title: Languages
+          languages.limit: 8
+          languages.detailed: yes
+          languages.icons: yes
 
           # Open Source
-          open_source:
-            enabled: yes
-            title: Open Source Contributions
+          open_source.enabled: yes
+          open_source.title: Open Source Contributions
 
           # Following
-          following:
-            enabled: yes
-            title: Following
-            limit: 8
+          following.enabled: yes
+          following.title: Following
+          following.limit: 8
 
           footer: false
           gists: false
