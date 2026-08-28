@@ -3,9 +3,14 @@
 /**
  * update-stats.js - Gather GitHub user statistics and update README.md.
  *
- * This script fetches languages by commit, PR counts (open/merged),
- * and contribution stats for the authenticated user across all repos
- * using `gh api graphql`, then updates the README.md between STATS markers.
+ * Each stats section has its own pair of markers in README.md for independent
+ * updating. Add new sections by creating a new marker pair and a corresponding
+ * replace function.
+ *
+ * README.md markers:
+ *   <!-- LANGUAGES_STATS_START / END -->  — Languages by commit
+ *   <!-- PR_STATS_START / END -->          — PR counts (merged/open)
+ *   <!-- REPO_STATS_START / END -->        — Top repos contributed to
  *
  * Environment variables:
  *   GITHUB_TOKEN - Auto-detected via gh CLI in GitHub Actions
@@ -17,7 +22,6 @@ const path = require("path");
 
 // ─── Configuration ───────────────────────────────────────────────────────────
 
-// Resolve paths relative to the repo root (parent of .github/)
 const SCRIPT_DIR = path.dirname(__filename);
 const REPO_ROOT = path.resolve(SCRIPT_DIR, "../..");
 const README_PATH = path.join(REPO_ROOT, "README.md");
@@ -56,7 +60,30 @@ function gqlFetch(query, variables) {
   }
 }
 
-// ─── Data Fetching ───────────────────────────────────────────────────────────
+// Replace content between (and including) start/end markers, keeping the markers
+function replaceSection(readme, startMarker, endMarker, newContent) {
+  const startIdx = readme.indexOf(startMarker);
+  const endIdx = readme.indexOf(endMarker);
+
+  if (startIdx === -1 || endIdx === -1) {
+    // Markers not found — skip
+    console.log(`  ⚠️  ${startMarker} not found, skipping.`);
+    return { readme, changed: false };
+  }
+
+  // Replace everything between startMarker...endMarker with: startMarker + newContent + endMarker
+  // This keeps the markers in place for future runs
+  const newReadme =
+    readme.substring(0, startIdx + startMarker.length) +
+    "\n\n" +
+    newContent +
+    "\n\n" +
+    readme.substring(endIdx); // endMarker is already at endIdx, keep it
+
+  return { readme: newReadme, changed: newReadme !== readme };
+}
+
+// ─── GraphQL Queries ─────────────────────────────────────────────────────────
 
 const CONTRIBUTIONS_QUERY = `
 query($login: String!) {
@@ -105,16 +132,14 @@ query($login: String!) {
 }
 `;
 
+// ─── Data Fetching ───────────────────────────────────────────────────────────
+
 function fetchUsername() {
   // GITHUB_TOKEN cannot access /user endpoint (403).
   // Use gh repo view to get the owner, which works with repo-scoped tokens.
   const output = execSync(
     "gh repo view --json owner -q '.owner.login'",
-    {
-      encoding: "utf8",
-      cwd: REPO_ROOT,
-      stdio: ["pipe", "pipe", "pipe"],
-    }
+    { encoding: "utf8", cwd: REPO_ROOT, stdio: ["pipe", "pipe", "pipe"] }
   );
   return output.trim();
 }
@@ -125,15 +150,12 @@ function fetchLanguagesByCommit(username) {
   const response = gqlFetch(CONTRIBUTIONS_QUERY, { login: username });
   if (response.errors) {
     console.error("❌ GraphQL errors:", JSON.stringify(response.errors, null, 2));
-    return "```\nNo data available\n```";
+    return null;
   }
 
   const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
   if (!repos || repos.length === 0) {
-    return "```\nNo data available\n```";
-  }
-  if (repos.length === 0) {
-    return "```\nNo data available\n```";
+    return null;
   }
 
   // Aggregate languages across all contributed repos
@@ -155,25 +177,42 @@ function fetchLanguagesByCommit(username) {
     return `${lang.padEnd(20)} ${pct.padStart(5)}% ${bar}`;
   });
 
-  return "```\n" + lines.join("\n") + "\n```";
+  const markdown = `\`\`\`\n${lines.join("\n")}\n\`\`\``;
+
+  return `<div align="center">
+
+#### Languages by Commit
+
+${markdown}
+
+</div>`;
 }
 
-function fetchOpenPRs(username) {
-  console.log("  → Fetching open PRs...");
-  const response = gqlFetch(OPEN_PRS_QUERY, { login: username });
-  if (response.errors) {
-    return 0;
-  }
-  return response?.data?.user?.pullRequests?.totalCount ?? 0;
-}
+function fetchPRStats(username) {
+  console.log("  → Fetching PR stats...");
 
-function fetchMergedPRs(username) {
-  console.log("  → Fetching merged PRs...");
-  const response = gqlFetch(MERGED_PRS_QUERY, { login: username });
-  if (response.errors) {
-    return 0;
+  const openRes = gqlFetch(OPEN_PRS_QUERY, { login: username });
+  const mergedRes = gqlFetch(MERGED_PRS_QUERY, { login: username });
+
+  if (openRes.errors || mergedRes.errors) {
+    return null;
   }
-  return response?.data?.user?.pullRequests?.totalCount ?? 0;
+
+  const openPRs = openRes?.data?.user?.pullRequests?.totalCount ?? 0;
+  const mergedPRs = mergedRes?.data?.user?.pullRequests?.totalCount ?? 0;
+
+  const markdown = `<div align="center">
+
+#### Pull Request Stats
+
+| Metric | Count |
+|--------|-------|
+| ✅ PRs Merged | ${mergedPRs} |
+| 🔓 PRs Open | ${openPRs} |
+
+</div>`;
+
+  return { markdown, mergedPRs, openPRs };
 }
 
 function fetchTopRepos(username) {
@@ -181,12 +220,12 @@ function fetchTopRepos(username) {
 
   const response = gqlFetch(CONTRIBUTIONS_QUERY, { login: username });
   if (response.errors) {
-    return "```\nNo repos found\n```";
+    return null;
   }
 
   const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
   if (!repos || repos.length === 0) {
-    return "```\nNo external repos\n```";
+    return null;
   }
 
   // Sort by stars, then forks
@@ -203,7 +242,15 @@ function fetchTopRepos(username) {
     return `• ${r.nameWithOwner} ⭐${r.stargazerCount} 🍴${r.forkCount} (${lang})`;
   });
 
-  return "```\n" + lines.join("\n") + "\n```";
+  const markdown = `\`\`\`\n${lines.join("\n")}\n\`\`\``;
+
+  return `<div align="center">
+
+#### Top Repositories Contributed To
+
+${markdown}
+
+</div>`;
 }
 
 function fetchCommitStats(username) {
@@ -215,9 +262,6 @@ function fetchCommitStats(username) {
   }
 
   const coll = response?.data?.user?.contributionsCollection || {};
-  if (!response?.data?.user) {
-    return { commits: 0, issues: 0, reviews: 0, prs: 0 };
-  }
   return {
     commits: coll?.totalCommitContributions || 0,
     issues: coll?.totalIssueContributions || 0,
@@ -226,60 +270,61 @@ function fetchCommitStats(username) {
   };
 }
 
+// ─── Section Builders ────────────────────────────────────────────────────────
+
+// Each section builder returns { content, marker } to be passed to replaceSection
+
+function buildLanguagesSection(username) {
+  const content = fetchLanguagesByCommit(username);
+  if (!content) return null;
+  return {
+    content: content,
+    start: "<!-- LANGUAGES_STATS_START -->",
+    end: "<!-- LANGUAGES_STATS_END -->",
+  };
+}
+
+function buildPRSection(username) {
+  const result = fetchPRStats(username);
+  if (!result) return null;
+  return {
+    content: result.markdown,
+    start: "<!-- PR_STATS_START -->",
+    end: "<!-- PR_STATS_END -->",
+  };
+}
+
+function buildRepoSection(username) {
+  const content = fetchTopRepos(username);
+  if (!content) return null;
+  return {
+    content: content,
+    start: "<!-- REPO_STATS_START -->",
+    end: "<!-- REPO_STATS_END -->",
+  };
+}
+
 // ─── README Update ───────────────────────────────────────────────────────────
 
-function updateREADME(statsSection) {
+function updateREADME(sections) {
   console.log("📝 Updating README.md...");
-  const readme = fs.readFileSync(README_PATH, "utf8");
-  const startMarker = "<!-- STATS_MARKER_START -->";
-  const endMarker = "<!-- STATS_MARKER_END -->";
+  let readme = fs.readFileSync(README_PATH, "utf8");
+  let anyChanged = false;
 
-  // Check for HTML comment markers first
-  const startIdx = readme.indexOf(startMarker);
-  const endIdx = readme.indexOf(endMarker);
-
-  if (startIdx !== -1 && endIdx !== -1) {
-    // Replace existing section (markers exist)
-    const newReadme =
-      readme.substring(0, startIdx) +
-      statsSection +
-      readme.substring(endIdx + endMarker.length);
-    if (newReadme === readme) {
-      console.log("✅ No changes needed. README.md is up to date.");
-      return;
+  for (const section of sections) {
+    const result = replaceSection(readme, section.start, section.end, section.content);
+    if (result.changed) {
+      readme = result.readme;
+      anyChanged = true;
     }
-    fs.writeFileSync(README_PATH, newReadme);
-    console.log("✅ README.md updated successfully!");
+  }
+
+  if (!anyChanged) {
+    console.log("✅ No changes needed. README.md is up to date.");
     return;
   }
 
-  // Markers don't exist — find content between anchors
-  const statsAnchor = "### 📊 Project Statistics";
-  const footerAnchor = "**Building the future, one commit at a time.**";
-  const anchorStart = readme.indexOf(statsAnchor);
-  const anchorEnd = readme.indexOf(footerAnchor);
-
-  if (anchorStart !== -1 && anchorEnd !== -1) {
-    // Replace content between the two anchors
-    const newReadme =
-      readme.substring(0, anchorStart) +
-      "\n" +
-      statsSection +
-      "\n" +
-      readme.substring(anchorEnd);
-    if (newReadme === readme) {
-      console.log("✅ No changes needed. README.md is up to date.");
-      return;
-    }
-    fs.writeFileSync(README_PATH, newReadme);
-    console.log("✅ README.md updated successfully!");
-    return;
-  }
-
-  // Fallback: markers don't exist, append to end
-  console.log("⚠️  Stats section not found. Appending to end.");
-  const newReadme = readme + "\n" + statsSection;
-  fs.writeFileSync(README_PATH, newReadme);
+  fs.writeFileSync(README_PATH, readme);
   console.log("✅ README.md updated successfully!");
 }
 
@@ -291,69 +336,16 @@ function main() {
   const username = fetchUsername();
   console.log(`  📦 User: @${username}`);
 
-  const languages = fetchLanguagesByCommit(username);
-  const mergedPRs = fetchMergedPRs(username);
-  const openPRs = fetchOpenPRs(username);
-  const topRepos = fetchTopRepos(username);
+  const sections = [
+    buildLanguagesSection(username),
+    buildPRSection(username),
+    buildRepoSection(username),
+  ].filter(Boolean); // remove null sections
+
+  updateREADME(sections);
+
   const commits = fetchCommitStats(username);
-
-  const timestamp = new Date()
-    .toISOString()
-    .replace(/T/, " ")
-    .replace(/\.\d{3}Z/, " UTC");
-
-  const statsSection = `<!-- STATS_MARKER_START -->
-
-### 📊 Project Statistics
-
-<div align="center">
-
-**Last Updated:** ${timestamp}
-
-</div>
-
----
-
-<div align="center">
-
-#### Languages by Commit
-
-${languages}
-
-</div>
-
----
-
-<div align="center">
-
-#### Pull Request Stats
-
-| Metric | Count |
-|--------|-------|
-| ✅ PRs Merged | ${mergedPRs} |
-| 🔓 PRs Open | ${openPRs} |
-
-</div>
-
----
-
-<div align="center">
-
-#### Top Repositories Contributed To
-
-${topRepos}
-
-</div>
-
-<!-- STATS_MARKER_END -->`;
-
-  updateREADME(statsSection);
-
-  console.log("   📊 Languages: collected");
-  console.log(`   ✅ Merged PRs: ${mergedPRs}`);
-  console.log(`   🔓 Open PRs: ${openPRs}`);
   console.log(`   💬 Commits: ${commits.commits}, Issues: ${commits.issues}, Reviews: ${commits.reviews}`);
-  console.log("   📁 Top repos: collected");
 }
 
 main();
