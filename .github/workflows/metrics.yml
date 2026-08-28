@@ -18,16 +18,16 @@ jobs:
           user: poliglots
           config_timezone: UTC
           output_file: metrics.svg
-          template: landscape
+          template: repository
 
           # Plugins
-          plugins.users.enabled: yes
-          plugins.achievements.enabled: yes
-          plugins.achievements.themes: tech, gaming, productivity
+          plugins.users.enabled: no
+          plugins.achievements.enabled: no
+          plugins.achievements.themes: tech
           plugins.sponsor.enabled: no
           plugins.support.enabled: no
-          plugins.habits.enabled: yes
-          plugins.habits.facts.enabled: yes
+          plugins.habits.enabled: no
+          plugins.habits.facts.enabled: no
           plugins.infrastructure.used.services.enabled: no
           plugins.infrastructure.used.platforms.enabled: no
 
@@ -71,9 +71,9 @@ jobs:
           open_source.title: Open Source Contributions
 
           # Following
-          following.enabled: yes
+          following.enabled: no
           following.title: Following
           following.limit: 8
 
-          footer: false
-          gists: false
+          footer: true
+          gists: true
