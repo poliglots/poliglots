@@ -1,8 +1,8 @@
 <!-- LANGUAGES_STATS_START -->
 
-<div align="center">
+<div align="left">
 
-#### Languages by Commit
+### Languages by Commit
 
 ```
 Java                  28.6% ██████████████
@@ -17,14 +17,14 @@ TypeScript            14.3% ███████
 
 <!-- PR_STATS_START -->
 
-<div align="center">
+<div align="left">
 
-#### Pull Request Stats
+### Pull Request Stats
 
-| Metric | Count |
-|--------|-------|
-| ✅ PRs Merged | 3 |
-| 🔓 PRs Open | 5 |
+| Metric         | Count |
+|----------------|-------|
+| ✅ PRs Merged   | 3    |
+| 🔓 PRs Open    | 5    |
 
 </div>
 
@@ -32,9 +32,9 @@ TypeScript            14.3% ███████
 
 <!-- REPO_STATS_START -->
 
-<div align="center">
+<div align="left">
 
-#### Top Repositories Contributed To
+### Top Repositories Contributed To
 
 ```
 • etcd-io/etcd ⭐52195 🍴10476 (Go)
@@ -53,8 +53,7 @@ TypeScript            14.3% ███████
 ---
 
 <div align="center">
-  
-**Building the future, one commit at a time.** 🚀
 
+**Building the future, one commit at a time.** 🚀
 
 </div>

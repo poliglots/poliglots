@@ -179,9 +179,9 @@ function fetchLanguagesByCommit(username) {
 
   const markdown = `\`\`\`\n${lines.join("\n")}\n\`\`\``;
 
-  return `<div align="center">
+  return `<div align="left">
 
-#### Languages by Commit
+### Languages by Commit
 
 ${markdown}
 
@@ -201,14 +201,14 @@ function fetchPRStats(username) {
   const openPRs = openRes?.data?.user?.pullRequests?.totalCount ?? 0;
   const mergedPRs = mergedRes?.data?.user?.pullRequests?.totalCount ?? 0;
 
-  const markdown = `<div align="center">
+  const markdown = `<div align="left">
 
-#### Pull Request Stats
+### Pull Request Stats
 
-| Metric | Count |
-|--------|-------|
-| ✅ PRs Merged | ${mergedPRs} |
-| 🔓 PRs Open | ${openPRs} |
+| Metric         | Count |
+|----------------|-------|
+| ✅ PRs Merged   | ${mergedPRs}    |
+| 🔓 PRs Open    | ${openPRs}    |
 
 </div>`;
 
@@ -244,9 +244,9 @@ function fetchTopRepos(username) {
 
   const markdown = `\`\`\`\n${lines.join("\n")}\n\`\`\``;
 
-  return `<div align="center">
+  return `<div align="left">
 
-#### Top Repositories Contributed To
+### Top Repositories Contributed To
 
 ${markdown}
 
