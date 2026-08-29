@@ -13,7 +13,14 @@ function fetchIssues(username) {
     );
     console.log(data.items);
     if (!data.items || !data.items.length) break;
-    allIssues.push(...data.items);
+    // Filter out PRs — GitHub's /search/issues returns both issues AND PRs
+    const realIssues = data.items.filter((i) => !i.pull_request);
+    console.log(`  ← page ${page}: total_count=${data.total_count || 0}, raw=${(data.items || []).length}, real issues=${realIssues.length}`);
+    if (!realIssues.length) break;
+    realIssues.forEach((i) => {
+      console.log(`     ISSUE #${i.number} — ${i.title.slice(0, 70)} (${i.repository_url?.replace("https://api.github.com/repos/", "")})`);
+    });
+    allIssues.push(...realIssues);
     if (data.items.length < perPage) break;
   }
 

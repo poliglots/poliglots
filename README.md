@@ -42,7 +42,7 @@ TypeScript            14.3% ███████
 • tikv/tikv ⭐16819 🍴2330 (Rust)
 • zitadel/zitadel ⭐14891 🍴1255 (Go)
 • cloud-hypervisor/cloud-hypervisor ⭐6157 🍴750 (Rust)
-• apache/maven ⭐5325 🍴3114 (Java)
+• apache/maven ⭐5326 🍴3114 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2118 🍴1268 (TypeScript)
 ```
 
