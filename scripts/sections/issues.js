@@ -9,7 +9,7 @@ function fetchIssues(username) {
   // Paginate through issues authored by user
   for (let page = 1; page <= 3; page++) {
     const data = ghApiJson(
-      `/search/issues?q=author:${username}+is:issue&per_page=${perPage}&page=${page}&sort=updated&order=desc`
+      `/search/issues?q=author:${username}+type:issue&per_page=${perPage}&page=${page}&sort=updated&order=desc`
     );
     console.log(data.items);
     if (!data.items || !data.items.length) break;
