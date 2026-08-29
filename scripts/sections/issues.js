@@ -11,6 +11,7 @@ function fetchIssues(username) {
     const data = ghApiJson(
       `/search/issues?q=author:${username}+is:issue&per_page=${perPage}&page=${page}&sort=updated&order=desc`
     );
+    console.log(data.items);
     if (!data.items || !data.items.length) break;
     allIssues.push(...data.items);
     if (data.items.length < perPage) break;
