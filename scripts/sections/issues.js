@@ -6,7 +6,6 @@ function fetchIssues(username) {
   const perPage = 30;
   const allIssues = [];
 
-  // Paginate through issues authored by user
   for (let page = 1; page <= 3; page++) {
     const data = ghApiJson(
       `/search/issues?q=author:${username}+is:issue&per_page=${perPage}&page=${page}&sort=updated&order=desc`
@@ -21,30 +20,28 @@ function fetchIssues(username) {
 
   if (!allIssues.length) return null;
 
-  const issues = allIssues
-    .slice(0, 30)
-    .map((i) => {
-      const status = i.state === "closed" ? "❌" : "🟢";
-      const repo = i.repository_url
-        ? i.repository_url.replace("https://api.github.com/repos/", "")
-        : "";
-      const body = (i.body || "").trim().replace(/\s+/g, " ").slice(0, 150);
-      const date = i.closed_at
-        ? new Date(i.closed_at).toLocaleDateString()
-        : new Date(i.updated_at).toLocaleDateString();
+  const total = allIssues.length;
+  const open = allIssues.filter((i) => i.state === "open").length;
+  const closed = total - open;
+  const repos = [...new Set(allIssues.map((i) => i.repository_url?.replace("https://api.github.com/repos/", "")))].filter(Boolean);
 
-      const summary = `${status} #${i.number} — ${i.title} (${repo})`;
-      const detail = `${body}${body.length < (i.body || "").trim().length ? "…" : ""}  \n<small>📅 ${date}</small>`;
+  const issueLinks = allIssues
+    .slice(0, 5)
+    .map(
+      (i) =>
+        `• [${i.state === "open" ? "🟢" : "❌"} #${i.number}](${i.html_url}) — ${i.title.slice(0, 50)}\n  ↳ *${i.repository_url?.replace("https://api.github.com/repos/", "")}*`
+    )
+    .join("\n\n");
 
-      return `<details>\n<summary>${summary}</summary>\n\n${detail}\n\n</details>`;
-    })
-    .join("\n\n---\n\n");
+  const extra = allIssues.length > 5 ? `\n• _${allIssues.length - 5} more_` : "";
 
   return `<div align="left">
 
 ### Reported Issues
 
-${issues}
+🐛 **${total}** issue${total > 1 ? "s" : ""} (${open} open · ${closed} closed) across ${repos.length} repo${repos.length > 1 ? "s" : ""}
+
+${issueLinks}${extra}
 
 </div>`;
 }

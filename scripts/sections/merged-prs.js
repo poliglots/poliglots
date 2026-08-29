@@ -9,26 +9,25 @@ function fetchMergedPRs(username) {
   const nodes = response?.data?.user?.pullRequests?.nodes || [];
   if (!nodes.length) return null;
 
-  const prs = nodes
-    .filter((p) => p && p.title)
-    .map((p) => {
-      // Truncate body to 150 chars for readability
-      const body = (p.body || "").trim().replace(/\s+/g, " ").slice(0, 150);
-      const date = p.mergedAt ? new Date(p.mergedAt).toLocaleDateString() : "";
-      const repo = p.repository?.nameWithOwner || "";
+  const count = nodes.length;
+  const repos = [...new Set(nodes.map((p) => p.repository?.nameWithOwner).filter(Boolean))];
+  const prLinks = nodes
+    .slice(0, 5)
+    .map(
+      (p) =>
+        `• [#${p.number}](${p.html_url || `https://github.com/${p.repository?.nameWithOwner}/pull/${p.number}`}) — ${p.title.slice(0, 50)}\n  ↳ *${p.repository?.nameWithOwner}*`
+    )
+    .join("\n\n");
 
-      const summary = `#${p.number} — ${p.title} (${repo})`;
-      const detail = date ? `${body}${body.length < (p.body || "").trim().length ? "…" : ""}  \n<small>📅 ${date}</small>` : body;
-
-      return `<details>\n<summary>${summary}</summary>\n\n${detail}\n\n</details>`;
-    })
-    .join("\n\n---\n\n");
+  const extra = nodes.length > 5 ? `\n• _${nodes.length - 5} more_` : "";
 
   return `<div align="left">
 
 ### Recent Merged Pull Requests
 
-${prs}
+🔀 **${count}** merged PR${count > 1 ? "s" : ""} across ${repos.length} repo${repos.length > 1 ? "s" : ""}
+
+${prLinks}${extra}
 
 </div>`;
 }
