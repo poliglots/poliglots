@@ -95,90 +95,10 @@ Move scope-handling block after auth enforcement in updateOIDC endpoint. The PUT
 ### Reported Issues
 
 <details>
-<summary>🟢 #51877 — fix: Prevent SAML OneTimeUse assertion replay in IdP-Initiated broker flow (keycloak/keycloak)</summary>
+<summary>🟢 #52059 — Flaky test: org.keycloak.testsuite.forms.ResetPasswordTest#resetPasswordWithLengthPasswordPolicy (keycloak/keycloak)</summary>
 
-When a SAML broker is configured using the IdP-Initiated flow, Keycloak failed to enforce the OneTimeUse condition in SAML assertions. This allowed an…  
-<small>📅 8/28/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>❌ #8770 — vmm: Set reserve=on by default when hugepages=on (cloud-hypervisor/cloud-hypervisor)</summary>
-
-When hugepages=on but reserve isn't explicitly set, default reserve to on. This ensures the kernel reserves physical RAM for huge pages at boot time, …  
+## org.keycloak.testsuite.forms.ResetPasswordTest#resetPasswordWithLengthPasswordPolicy [Keycloak CI - Forms IT (chrome)](https://github.com/keycloak/…  
 <small>📅 8/26/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>❌ #12753 — fix(api-core): properly implement Clock.withZone() in MonotonicClock (apache/maven)</summary>
-
-Fix issue #12608: MonotonicClock.withZone() was ignoring the zone parameter and returning 'this', violating the java.time.Clock contract. Changes: - A…  
-<small>📅 8/24/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>🟢 #12562 — fix(data): use explicit query comparison instead of lodash isEqual (opensearch-project/OpenSearch-Dashboards)</summary>
-
-Replace _.isEqual(payload.query, currentQuery) with a custom isEqualQuery helper that only compares the query and language fields. The bug: _.isEqual …  
-<small>📅 8/21/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>🟢 #20011 — raftstore: pass RaftCmdExtraOpts through local read path to enable deadline cancellation (tikv/tikv)</summary>
-
-Issue #19798 added a client-side timeout to kv::snapshot(), but the underlying read index request dispatched to raftstore via router.read() was never …  
-<small>📅 8/19/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>❌ #51635 — fix: OIDC client registration scope handling auth enforcement (#51311) (keycloak/keycloak)</summary>
-
-Move scope-handling block after auth enforcement in updateOIDC endpoint. The PUT /realms/{realm}/clients-registrations/openid-connect/{clientId} endpo…  
-<small>📅 8/17/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>🟢 #12601 — fix(login): preserve user theme preference when branding theme is auto (zitadel/zitadel)</summary>
-
-When branding themeMode is AUTO or UNSPECIFIED, the component was calling setNextTheme("system") on every render, overwriting the user's saved prefere…  
-<small>📅 8/15/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>❌ #8703 — tests: Verify receive-migration returns error on timeout cancel (cloud-hypervisor/cloud-hypervisor)</summary>
-
-This PR addresses [issue #8492](https://github.com/cloud-hypervisor/cloud-hypervisor/issues/8492). When the source-side live migration times out with …  
-<small>📅 8/12/2026</small>
-
-</details>
-
----
-
-<details>
-<summary>🟢 #22259 — v3rpc: add client IP to auth-related log messages (etcd-io/etcd)</summary>
-
-Add client IP address extracted from gRPC peer context to authentication and security-related log messages. This enables operations teams to identify …  
-<small>📅 8/9/2026</small>
 
 </details>
 
