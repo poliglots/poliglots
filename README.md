@@ -2,10 +2,10 @@
 
 <div align="left">
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 8 repos</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 72 commits</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 issues</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 73 commits</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
 </div>
 
 <!-- STATS_BANNER_END -->
@@ -35,7 +35,7 @@ TypeScript            12.5% ██████
 
 ```
 • etcd-io/etcd ⭐52208 🍴10481 (Go)
-• keycloak/keycloak ⭐36506 🍴8871 (Java)
+• keycloak/keycloak ⭐36507 🍴8871 (Java)
 • tikv/tikv ⭐16820 🍴2333 (Rust)
 • zitadel/zitadel ⭐14904 🍴1260 (Go)
 • cloud-hypervisor/cloud-hypervisor ⭐6166 🍴752 (Rust)

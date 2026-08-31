@@ -23,7 +23,7 @@ jobs:
 
       - name: Gather and update stats
         run: |
-          node scripts/update-stats.js
+          node scripts/main.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_AUTHOR_NAME: "GitHub Actions"
