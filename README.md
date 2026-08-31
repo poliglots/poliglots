@@ -1,3 +1,15 @@
+<!-- STATS_BANNER_START -->
+
+<div align="left">
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 8 repos</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 72 commits</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 issues</span>
+</div>
+
+<!-- STATS_BANNER_END -->
+
 <!-- LANGUAGES_STATS_START -->
 
 <div align="left">
@@ -5,30 +17,15 @@
 ### Languages by Commit
 
 ```
-Java                  28.6% ██████████████
-Go                    28.6% ██████████████
-Rust                  28.6% ██████████████
-TypeScript            14.3% ███████
+Rust                  37.5% ███████████████████
+Java                  25.0% █████████████
+Go                    25.0% █████████████
+TypeScript            12.5% ██████
 ```
 
 </div>
 
 <!-- LANGUAGES_STATS_END -->
-
-<!-- PR_STATS_START -->
-
-<div align="left">
-
-### Pull Request Stats
-
-| Metric         | Count |
-|----------------|-------|
-| ✅ PRs Merged   | 3    |
-| 🔓 PRs Open    | 5    |
-
-</div>
-
-<!-- PR_STATS_END -->
 
 <!-- REPO_STATS_START -->
 
@@ -37,13 +34,14 @@ TypeScript            14.3% ███████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52200 🍴10477 (Go)
-• keycloak/keycloak ⭐36477 🍴8862 (Java)
-• tikv/tikv ⭐16819 🍴2331 (Rust)
-• zitadel/zitadel ⭐14891 🍴1255 (Go)
-• cloud-hypervisor/cloud-hypervisor ⭐6157 🍴750 (Rust)
-• apache/maven ⭐5326 🍴3114 (Java)
-• opensearch-project/OpenSearch-Dashboards ⭐2118 🍴1268 (TypeScript)
+• etcd-io/etcd ⭐52208 🍴10481 (Go)
+• keycloak/keycloak ⭐36506 🍴8871 (Java)
+• tikv/tikv ⭐16820 🍴2333 (Rust)
+• zitadel/zitadel ⭐14904 🍴1260 (Go)
+• cloud-hypervisor/cloud-hypervisor ⭐6166 🍴752 (Rust)
+• apache/maven ⭐5332 🍴3127 (Java)
+• opensearch-project/OpenSearch-Dashboards ⭐2119 🍴1268 (TypeScript)
+• rust-vmm/rust-vmm ⭐71 🍴32 (Rust)
 ```
 
 </div>

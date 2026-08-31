@@ -1,15 +1,10 @@
-const { gqlFetch, QUERIES } = require("../github-api");
+const { ensureCache, getRepos } = require("../cache");
 
 function fetchLanguagesByCommit(username) {
-  console.log("  → Fetching languages by commit...");
+  const data = ensureCache(username);
+  if (!data) return null;
 
-  const response = gqlFetch(QUERIES.CONTRIBUTIONS, { login: username });
-  if (response.errors) {
-    console.error("❌ GraphQL errors:", JSON.stringify(response.errors, null, 2));
-    return null;
-  }
-
-  const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
+  const repos = getRepos().nodes || [];
   if (!repos.length) return null;
 
   const langMap = {};

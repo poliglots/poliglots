@@ -1,12 +1,10 @@
-const { gqlFetch, QUERIES } = require("../github-api");
+const { ensureCache, getRepos } = require("../cache");
 
 function fetchTopRepos(username) {
-  console.log("  → Fetching top repos...");
+  const data = ensureCache(username);
+  if (!data) return null;
 
-  const response = gqlFetch(QUERIES.CONTRIBUTIONS, { login: username });
-  if (response.errors) return null;
-
-  const repos = response?.data?.user?.repositoriesContributedTo?.nodes || [];
+  const repos = getRepos().nodes || [];
   if (!repos.length) return null;
 
   const sorted = repos

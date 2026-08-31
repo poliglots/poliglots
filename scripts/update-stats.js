@@ -20,9 +20,9 @@
 
 const { execSync } = require("child_process");
 const { REPO_ROOT } = require("./config");
-const { gqlFetch, QUERIES } = require("./github-api");
 const { updateREADME } = require("./readme-updater");
 const { buildSections } = require("./sections");
+const { ensureCache, clearCache } = require("./cache");
 
 // ─── Data Fetching ───────────────────────────────────────────────────────────
 
@@ -36,21 +36,6 @@ function fetchUsername() {
   return output.trim();
 }
 
-function fetchCommitStats(username) {
-  const response = gqlFetch(QUERIES.CONTRIBUTIONS, { login: username });
-  if (response.errors) {
-    return { commits: 0, issues: 0, reviews: 0, prs: 0 };
-  }
-
-  const coll = response?.data?.user?.contributionsCollection || {};
-  return {
-    commits: coll?.totalCommitContributions || 0,
-    issues: coll?.totalIssueContributions || 0,
-    reviews: coll?.totalPullRequestReviewContributions || 0,
-    prs: coll?.totalPullRequestContributions || 0,
-  };
-}
-
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -59,11 +44,19 @@ function main() {
   const username = fetchUsername();
   console.log(`  📦 User: @${username}`);
 
+  // Single shared API call for all sections
+  clearCache();
+  const cacheData = ensureCache(username);
+  if (!cacheData) {
+    console.error("❌ Failed to fetch GitHub data. Aborting.");
+    process.exit(1);
+  }
+
+  const coll = cacheData.coll;
+  console.log(`   💬 Commits: ${coll?.totalCommitContributions || 0}, Issues: ${coll?.totalIssueContributions || 0}, Reviews: ${coll?.totalPullRequestReviewContributions || 0}`);
+
   const sections = buildSections(username);
   updateREADME(sections);
-
-  const stats = fetchCommitStats(username);
-  console.log(`   💬 Commits: ${stats.commits}, Issues: ${stats.issues}, Reviews: ${stats.reviews}`);
 }
 
 main();

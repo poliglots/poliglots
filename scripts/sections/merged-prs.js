@@ -1,7 +1,8 @@
+const { ensureCache, getMergedPRs } = require("../cache");
 const { gqlFetch, QUERIES } = require("../github-api");
 
 function fetchMergedPRs(username) {
-  console.log("  → Fetching merged PRs...");
+  ensureCache(username);
 
   const response = gqlFetch(QUERIES.MERGED_PRS_LIST, { login: username });
   if (response.errors) return null;
@@ -9,7 +10,7 @@ function fetchMergedPRs(username) {
   const nodes = response?.data?.user?.pullRequests?.nodes || [];
   if (!nodes.length) return null;
 
-  const count = nodes.length;
+  const count = getMergedPRs();
   const repos = [...new Set(nodes.map((p) => p.repository?.nameWithOwner).filter(Boolean))];
   const prLinks = nodes
     .slice(0, 5)

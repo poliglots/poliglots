@@ -1,21 +1,21 @@
 // Sections are assembled here; updateREADME is called from update-stats.js
 const { MARKERS } = require("../config");
+const { fetchStatsBanner } = require("./stats-banner");
 const { fetchLanguagesByCommit } = require("./languages");
-const { fetchPRStats } = require("./pr-stats");
 const { fetchTopRepos } = require("./repo-stats");
 const { fetchMergedPRs } = require("./merged-prs");
 const { fetchIssues } = require("./issues");
 
 const SECTION_BUILDERS = {
+  statsBanner: {
+    fetch: fetchStatsBanner,
+    start: MARKERS.STATS_BANNER.start,
+    end: MARKERS.STATS_BANNER.end,
+  },
   languages: {
     fetch: fetchLanguagesByCommit,
     start: MARKERS.LANGUAGES.start,
     end: MARKERS.LANGUAGES.end,
-  },
-  prStats: {
-    fetch: fetchPRStats,
-    start: MARKERS.PR_STATS.start,
-    end: MARKERS.PR_STATS.end,
   },
   repoStats: {
     fetch: fetchTopRepos,
