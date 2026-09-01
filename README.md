@@ -4,7 +4,7 @@
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 8 repos</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 74 commits</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged PRs</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 7 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
 </div>
 
@@ -35,12 +35,12 @@ TypeScript            12.5% ██████
 
 ```
 • etcd-io/etcd ⭐52214 🍴10484 (Go)
-• keycloak/keycloak ⭐36525 🍴8878 (Java)
+• keycloak/keycloak ⭐36536 🍴8877 (Java)
 • tikv/tikv ⭐16824 🍴2334 (Rust)
-• zitadel/zitadel ⭐14918 🍴1261 (Go)
-• cloud-hypervisor/cloud-hypervisor ⭐6168 🍴752 (Rust)
-• apache/maven ⭐5335 🍴3127 (Java)
-• opensearch-project/OpenSearch-Dashboards ⭐2118 🍴1270 (TypeScript)
+• zitadel/zitadel ⭐14920 🍴1262 (Go)
+• cloud-hypervisor/cloud-hypervisor ⭐6171 🍴752 (Rust)
+• apache/maven ⭐5337 🍴3127 (Java)
+• opensearch-project/OpenSearch-Dashboards ⭐2118 🍴1271 (TypeScript)
 • rust-vmm/rust-vmm ⭐72 🍴32 (Rust)
 ```
 
