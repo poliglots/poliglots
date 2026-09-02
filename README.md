@@ -10,7 +10,7 @@
 
 <div align="left">
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 8 repos</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 74 commits</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 75 commits</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 7 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
@@ -78,6 +78,17 @@ TypeScript            12.5% ██████
 <!-- MERGED_PRS_END -->
 
 <!-- ISSUES_START -->
+
+<div align="left">
+
+### Reported Issues
+
+🐛 **1** issue (1 open · 0 closed) across 1 repo
+
+• [🟢 #52059](https://github.com/keycloak/keycloak/issues/52059) — Flaky test: org.keycloak.testsuite.forms.ResetPass
+  ↳ *keycloak/keycloak*
+
+</div>
 
 <!-- ISSUES_END -->
 
