@@ -9,10 +9,10 @@
 <!-- STATS_BANNER_START -->
 
 <div align="left">
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 8 repos</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 9 repos</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 76 commits</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged PRs</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 7 open PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 8 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
 </div>
 
@@ -25,10 +25,10 @@
 ### Languages by Commit
 
 ```
-Rust                  37.5% ███████████████████
-Java                  25.0% █████████████
-Go                    25.0% █████████████
-TypeScript            12.5% ██████
+Java                  33.3% █████████████████
+Rust                  33.3% █████████████████
+Go                    22.2% ███████████
+TypeScript            11.1% ██████
 ```
 
 </div>
@@ -43,10 +43,11 @@ TypeScript            12.5% ██████
 
 ```
 • etcd-io/etcd ⭐52225 🍴10488 (Go)
-• keycloak/keycloak ⭐36594 🍴8893 (Java)
+• keycloak/keycloak ⭐36600 🍴8893 (Java)
 • tikv/tikv ⭐16830 🍴2335 (Rust)
-• zitadel/zitadel ⭐14936 🍴1269 (Go)
-• cloud-hypervisor/cloud-hypervisor ⭐6187 🍴751 (Rust)
+• zitadel/zitadel ⭐14936 🍴1270 (Go)
+• apache/shenyu ⭐8830 🍴3066 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6190 🍴751 (Rust)
 • apache/maven ⭐5340 🍴3120 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2118 🍴1271 (TypeScript)
 • rust-vmm/rust-vmm ⭐78 🍴34 (Rust)
