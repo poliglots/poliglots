@@ -105,6 +105,23 @@ const QUERIES = {
         }
       }
     }`,
+
+  OPEN_PRS_LIST: `
+    query($login: String!) {
+      user(login: $login) {
+        pullRequests(first: 30, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {
+          nodes {
+            title
+            number
+            repository {
+              nameWithOwner
+            }
+            body
+            createdAt
+          }
+        }
+      }
+    }`,
 };
 
 module.exports = { ghApi, gqlFetch, QUERIES, ghApiJson };

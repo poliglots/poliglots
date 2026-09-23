@@ -4,6 +4,7 @@ const { fetchStatsBanner } = require("./stats-banner");
 const { fetchLanguagesByCommit } = require("./languages");
 const { fetchTopRepos } = require("./repo-stats");
 const { fetchMergedPRs } = require("./merged-prs");
+const { fetchOpenPRs } = require("./open-prs");
 const { fetchIssues } = require("./issues");
 
 const SECTION_BUILDERS = {
@@ -26,6 +27,11 @@ const SECTION_BUILDERS = {
     fetch: fetchMergedPRs,
     start: MARKERS.MERGED_PRS.start,
     end: MARKERS.MERGED_PRS.end,
+  },
+  openPRs: {
+    fetch: fetchOpenPRs,
+    start: MARKERS.OPEN_PRS.start,
+    end: MARKERS.OPEN_PRS.end,
   },
   issues: {
     fetch: fetchIssues,

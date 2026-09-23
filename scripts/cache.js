@@ -44,4 +44,8 @@ function getMergedPRs() {
   return _cache?.mergedPRs ?? 0;
 }
 
-module.exports = { ensureCache, clearCache, getColl, getRepos, getOpenPRs, getMergedPRs };
+function getOpenPRsCount() {
+  return _cache?.openPRs ?? 0;
+}
+
+module.exports = { ensureCache, clearCache, getColl, getRepos, getOpenPRs, getMergedPRs, getOpenPRsCount };

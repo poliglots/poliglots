@@ -17,7 +17,7 @@ function fetchTopRepos(username) {
 
   const lines = sorted.map((r) => {
     const lang = r.primaryLanguage?.name || "N/A";
-    return `• ${r.nameWithOwner} ⭐${r.stargazerCount} 🍴${r.forkCount} (${lang})`;
+    return `• ${r.nameWithOwner} ⭐${r.stargazerCount} (${lang})`;
   });
 
   const markdown = `\`\`\`\n${lines.join("\n")}\n\`\`\``;

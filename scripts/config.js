@@ -8,6 +8,7 @@ const MARKERS = {
   LANGUAGES:      { start: "<!-- LANGUAGES_STATS_START -->", end: "<!-- LANGUAGES_STATS_END -->" },
   REPO_STATS:     { start: "<!-- REPO_STATS_START -->",     end: "<!-- REPO_STATS_END -->" },
   MERGED_PRS:     { start: "<!-- MERGED_PRS_START -->",     end: "<!-- MERGED_PRS_END -->" },
+  OPEN_PRS:       { start: "<!-- OPEN_PRS_START -->",       end: "<!-- OPEN_PRS_END -->" },
   ISSUES:         { start: "<!-- ISSUES_START -->",         end: "<!-- ISSUES_END -->" },
 };
 

@@ -42,15 +42,15 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52301 🍴10509 (Go)
-• keycloak/keycloak ⭐36948 🍴8952 (Java)
-• tikv/tikv ⭐16871 🍴2345 (Rust)
-• zitadel/zitadel ⭐15081 🍴1323 (Go)
-• apache/shenyu ⭐8837 🍴3072 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6250 🍴770 (Rust)
-• apache/maven ⭐5356 🍴3126 (Java)
-• opensearch-project/OpenSearch-Dashboards ⭐2130 🍴1276 (TypeScript)
-• rust-vmm/rust-vmm ⭐99 🍴44 (Rust)
+• etcd-io/etcd ⭐52301 (Go)
+• keycloak/keycloak ⭐36950 (Java)
+• tikv/tikv ⭐16871 (Rust)
+• zitadel/zitadel ⭐15081 (Go)
+• apache/shenyu ⭐8837 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6250 (Rust)
+• apache/maven ⭐5356 (Java)
+• opensearch-project/OpenSearch-Dashboards ⭐2130 (TypeScript)
+• rust-vmm/rust-vmm ⭐99 (Rust)
 ```
 
 </div>
@@ -77,6 +77,34 @@ TypeScript            11.1% ██████
 </div>
 
 <!-- MERGED_PRS_END -->
+
+<!-- OPEN_PRS_START -->
+
+<div align="left">
+
+### Open Pull Requests
+
+🔓 **8** open PRs across 7 repos
+
+• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
+  ↳ *apache/shenyu*
+
+• [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
+  ↳ *keycloak/keycloak*
+
+• [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
+  ↳ *opensearch-project/OpenSearch-Dashboards*
+
+• [#125](https://github.com/rust-vmm/rust-vmm/pull/125) — ci: consolidate publish workflows into single work
+  ↳ *rust-vmm/rust-vmm*
+
+• [#51877](https://github.com/keycloak/keycloak/pull/51877) — fix: Prevent SAML OneTimeUse assertion replay in I
+  ↳ *keycloak/keycloak*
+• _3 more_
+
+</div>
+
+<!-- OPEN_PRS_END -->
 
 <!-- ISSUES_START -->
 
