@@ -13,5 +13,6 @@ const MARKERS = {
 };
 
 const README_PATH = path.join(REPO_ROOT, "README.md");
+const PRS_TO_SHOW = 10;
 
-module.exports = { REPO_ROOT, MARKERS, README_PATH };
+module.exports = { REPO_ROOT, MARKERS, README_PATH, PRS_TO_SHOW };

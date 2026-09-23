@@ -42,11 +42,11 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52301 (Go)
-• keycloak/keycloak ⭐36950 (Java)
+• etcd-io/etcd ⭐52304 (Go)
+• keycloak/keycloak ⭐36951 (Java)
 • tikv/tikv ⭐16871 (Rust)
-• zitadel/zitadel ⭐15081 (Go)
-• apache/shenyu ⭐8837 (Java)
+• zitadel/zitadel ⭐15079 (Go)
+• apache/shenyu ⭐8838 (Java)
 • cloud-hypervisor/cloud-hypervisor ⭐6250 (Rust)
 • apache/maven ⭐5356 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2130 (TypeScript)
@@ -100,7 +100,15 @@ TypeScript            11.1% ██████
 
 • [#51877](https://github.com/keycloak/keycloak/pull/51877) — fix: Prevent SAML OneTimeUse assertion replay in I
   ↳ *keycloak/keycloak*
-• _3 more_
+
+• [#20011](https://github.com/tikv/tikv/pull/20011) — raftstore: pass RaftCmdExtraOpts through local rea
+  ↳ *tikv/tikv*
+
+• [#12601](https://github.com/zitadel/zitadel/pull/12601) — fix(login): preserve user theme preference when br
+  ↳ *zitadel/zitadel*
+
+• [#22259](https://github.com/etcd-io/etcd/pull/22259) — v3rpc: add client IP to auth-related log messages
+  ↳ *etcd-io/etcd*
 
 </div>
 
