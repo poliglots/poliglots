@@ -43,13 +43,13 @@ TypeScript            11.1% ██████
 
 ```
 • etcd-io/etcd ⭐52310 (Go)
-• keycloak/keycloak ⭐36982 (Java)
-• tikv/tikv ⭐16873 (Rust)
-• zitadel/zitadel ⭐15092 (Go)
-• apache/shenyu ⭐8841 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6258 (Rust)
-• apache/maven ⭐5357 (Java)
-• opensearch-project/OpenSearch-Dashboards ⭐2131 (TypeScript)
+• keycloak/keycloak ⭐36987 (Java)
+• tikv/tikv ⭐16874 (Rust)
+• zitadel/zitadel ⭐15100 (Go)
+• apache/shenyu ⭐8842 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6260 (Rust)
+• apache/maven ⭐5356 (Java)
+• opensearch-project/OpenSearch-Dashboards ⭐2132 (TypeScript)
 • rust-vmm/rust-vmm ⭐102 (Rust)
 ```
 
@@ -86,11 +86,11 @@ TypeScript            11.1% ██████
 
 🔓 **8** open PRs across 7 repos
 
-• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
-  ↳ *apache/shenyu*
-
 • [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
   ↳ *keycloak/keycloak*
+
+• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
+  ↳ *apache/shenyu*
 
 • [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
   ↳ *opensearch-project/OpenSearch-Dashboards*
