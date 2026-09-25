@@ -10,9 +10,9 @@
 
 <div align="left">
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 9 repos</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 78 commits</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 3 merged PRs</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 8 open PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 79 commits</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 4 merged PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 7 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
 </div>
 
@@ -42,15 +42,15 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52310 (Go)
+• etcd-io/etcd ⭐52311 (Go)
 • keycloak/keycloak ⭐36987 (Java)
-• tikv/tikv ⭐16874 (Rust)
-• zitadel/zitadel ⭐15100 (Go)
-• apache/shenyu ⭐8842 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6260 (Rust)
+• tikv/tikv ⭐16873 (Rust)
+• zitadel/zitadel ⭐15103 (Go)
+• apache/shenyu ⭐8841 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6259 (Rust)
 • apache/maven ⭐5356 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2132 (TypeScript)
-• rust-vmm/rust-vmm ⭐102 (Rust)
+• rust-vmm/rust-vmm ⭐103 (Rust)
 ```
 
 </div>
@@ -63,7 +63,10 @@ TypeScript            11.1% ██████
 
 ### Recent Merged Pull Requests
 
-🔀 **3** merged PRs across 3 repos
+🔀 **4** merged PRs across 3 repos
+
+• [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
+  ↳ *keycloak/keycloak*
 
 • [#8770](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8770) — vmm: Set reserve=on by default when hugepages=on
   ↳ *cloud-hypervisor/cloud-hypervisor*
@@ -84,10 +87,7 @@ TypeScript            11.1% ██████
 
 ### Open Pull Requests
 
-🔓 **8** open PRs across 7 repos
-
-• [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
-  ↳ *keycloak/keycloak*
+🔓 **7** open PRs across 7 repos
 
 • [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
   ↳ *apache/shenyu*
