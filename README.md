@@ -43,12 +43,12 @@ TypeScript            11.1% ██████
 
 ```
 • etcd-io/etcd ⭐52310 (Go)
-• keycloak/keycloak ⭐36999 (Java)
-• tikv/tikv ⭐16879 (Rust)
-• zitadel/zitadel ⭐15111 (Go)
+• keycloak/keycloak ⭐37002 (Java)
+• tikv/tikv ⭐16880 (Rust)
+• zitadel/zitadel ⭐15113 (Go)
 • apache/shenyu ⭐8840 (Java)
 • cloud-hypervisor/cloud-hypervisor ⭐6264 (Rust)
-• apache/maven ⭐5357 (Java)
+• apache/maven ⭐5358 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2130 (TypeScript)
 • rust-vmm/rust-vmm ⭐104 (Rust)
 ```
