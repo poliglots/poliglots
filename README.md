@@ -42,10 +42,10 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52321 (Go)
+• etcd-io/etcd ⭐52323 (Go)
 • keycloak/keycloak ⭐37104 (Java)
 • tikv/tikv ⭐16898 (Rust)
-• zitadel/zitadel ⭐15159 (Go)
+• zitadel/zitadel ⭐15165 (Go)
 • apache/shenyu ⭐8843 (Java)
 • cloud-hypervisor/cloud-hypervisor ⭐6278 (Rust)
 • apache/maven ⭐5361 (Java)
