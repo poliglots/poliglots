@@ -10,9 +10,9 @@
 
 <div align="left">
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 9 repos</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 79 commits</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 4 merged PRs</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 7 open PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 80 commits</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 5 merged PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
 </div>
 
@@ -42,15 +42,15 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52341 (Go)
-• keycloak/keycloak ⭐37191 (Java)
-• tikv/tikv ⭐16906 (Rust)
-• zitadel/zitadel ⭐15244 (Go)
+• etcd-io/etcd ⭐52343 (Go)
+• keycloak/keycloak ⭐37196 (Java)
+• tikv/tikv ⭐16905 (Rust)
+• zitadel/zitadel ⭐15245 (Go)
 • apache/shenyu ⭐8844 (Java)
 • cloud-hypervisor/cloud-hypervisor ⭐6298 (Rust)
 • apache/maven ⭐5371 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2130 (TypeScript)
-• rust-vmm/rust-vmm ⭐121 (Rust)
+• rust-vmm/rust-vmm ⭐122 (Rust)
 ```
 
 </div>
@@ -63,7 +63,10 @@ TypeScript            11.1% ██████
 
 ### Recent Merged Pull Requests
 
-🔀 **4** merged PRs across 3 repos
+🔀 **5** merged PRs across 4 repos
+
+• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
+  ↳ *apache/shenyu*
 
 • [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
   ↳ *keycloak/keycloak*
@@ -87,10 +90,7 @@ TypeScript            11.1% ██████
 
 ### Open Pull Requests
 
-🔓 **7** open PRs across 7 repos
-
-• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
-  ↳ *apache/shenyu*
+🔓 **6** open PRs across 6 repos
 
 • [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
   ↳ *opensearch-project/OpenSearch-Dashboards*
