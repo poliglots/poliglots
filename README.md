@@ -13,7 +13,7 @@
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 80 commits</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 5 merged PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open PRs</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 1 reported issues</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 2 reported issues</span>
 </div>
 
 <!-- STATS_BANNER_END -->
@@ -42,13 +42,13 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52343 (Go)
-• keycloak/keycloak ⭐37196 (Java)
-• tikv/tikv ⭐16905 (Rust)
-• zitadel/zitadel ⭐15245 (Go)
+• etcd-io/etcd ⭐52344 (Go)
+• keycloak/keycloak ⭐37207 (Java)
+• tikv/tikv ⭐16906 (Rust)
+• zitadel/zitadel ⭐15250 (Go)
 • apache/shenyu ⭐8844 (Java)
 • cloud-hypervisor/cloud-hypervisor ⭐6298 (Rust)
-• apache/maven ⭐5371 (Java)
+• apache/maven ⭐5370 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2130 (TypeScript)
 • rust-vmm/rust-vmm ⭐122 (Rust)
 ```
