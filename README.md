@@ -10,7 +10,7 @@
 
 <div align="left">
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 9 repos</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 80 commits</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 81 commits</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 5 merged PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 2 reported issues</span>
@@ -42,12 +42,12 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52344 (Go)
-• keycloak/keycloak ⭐37213 (Java)
-• tikv/tikv ⭐16906 (Rust)
-• zitadel/zitadel ⭐15259 (Go)
+• etcd-io/etcd ⭐52346 (Go)
+• keycloak/keycloak ⭐37226 (Java)
+• tikv/tikv ⭐16907 (Rust)
+• zitadel/zitadel ⭐15264 (Go)
 • apache/shenyu ⭐8844 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6299 (Rust)
+• cloud-hypervisor/cloud-hypervisor ⭐6300 (Rust)
 • apache/maven ⭐5369 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2130 (TypeScript)
 • rust-vmm/rust-vmm ⭐122 (Rust)
@@ -120,7 +120,10 @@ TypeScript            11.1% ██████
 
 ### Reported Issues
 
-🐛 **1** issue (1 open · 0 closed) across 1 repo
+🐛 **2** issues (2 open · 0 closed) across 2 repos
+
+• [🟢 #7510](https://github.com/apache/shenyu/issues/7510) — [Refactor] Clean up redundant null guard for conte
+  ↳ *apache/shenyu*
 
 • [🟢 #52059](https://github.com/keycloak/keycloak/issues/52059) — Flaky test: org.keycloak.testsuite.forms.ResetPass
   ↳ *keycloak/keycloak*
