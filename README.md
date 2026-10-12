@@ -42,15 +42,15 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52346 (Go)
-• keycloak/keycloak ⭐37302 (Java)
+• etcd-io/etcd ⭐52350 (Go)
+• keycloak/keycloak ⭐37313 (Java)
 • tikv/tikv ⭐16906 (Rust)
-• zitadel/zitadel ⭐15286 (Go)
-• apache/shenyu ⭐8844 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6320 (Rust)
+• zitadel/zitadel ⭐15293 (Go)
+• apache/shenyu ⭐8848 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6323 (Rust)
 • apache/maven ⭐5374 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2131 (TypeScript)
-• rust-vmm/rust-vmm ⭐125 (Rust)
+• rust-vmm/rust-vmm ⭐126 (Rust)
 ```
 
 </div>
@@ -122,11 +122,11 @@ TypeScript            11.1% ██████
 
 🐛 **2** issues (2 open · 0 closed) across 2 repos
 
-• [🟢 #7510](https://github.com/apache/shenyu/issues/7510) — [Refactor] Clean up redundant null guard for conte
-  ↳ *apache/shenyu*
-
 • [🟢 #52059](https://github.com/keycloak/keycloak/issues/52059) — Flaky test: org.keycloak.testsuite.forms.ResetPass
   ↳ *keycloak/keycloak*
+
+• [🟢 #7510](https://github.com/apache/shenyu/issues/7510) — [Refactor] Clean up redundant null guard for conte
+  ↳ *apache/shenyu*
 
 </div>
 
