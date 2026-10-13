@@ -42,15 +42,15 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52352 (Go)
-• keycloak/keycloak ⭐37321 (Java)
-• tikv/tikv ⭐16906 (Rust)
-• zitadel/zitadel ⭐15295 (Go)
-• apache/shenyu ⭐8847 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6323 (Rust)
-• apache/maven ⭐5373 (Java)
+• etcd-io/etcd ⭐52359 (Go)
+• keycloak/keycloak ⭐37331 (Java)
+• tikv/tikv ⭐16908 (Rust)
+• zitadel/zitadel ⭐15303 (Go)
+• apache/shenyu ⭐8848 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6327 (Rust)
+• apache/maven ⭐5374 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2131 (TypeScript)
-• rust-vmm/rust-vmm ⭐126 (Rust)
+• rust-vmm/rust-vmm ⭐128 (Rust)
 ```
 
 </div>
@@ -92,14 +92,14 @@ TypeScript            11.1% ██████
 
 🔓 **6** open PRs across 6 repos
 
+• [#51877](https://github.com/keycloak/keycloak/pull/51877) — fix: Prevent SAML OneTimeUse assertion replay in I
+  ↳ *keycloak/keycloak*
+
 • [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
   ↳ *opensearch-project/OpenSearch-Dashboards*
 
 • [#125](https://github.com/rust-vmm/rust-vmm/pull/125) — ci: consolidate publish workflows into single work
   ↳ *rust-vmm/rust-vmm*
-
-• [#51877](https://github.com/keycloak/keycloak/pull/51877) — fix: Prevent SAML OneTimeUse assertion replay in I
-  ↳ *keycloak/keycloak*
 
 • [#20011](https://github.com/tikv/tikv/pull/20011) — raftstore: pass RaftCmdExtraOpts through local rea
   ↳ *tikv/tikv*
