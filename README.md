@@ -42,12 +42,12 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52368 (Go)
-• keycloak/keycloak ⭐37382 (Java)
-• tikv/tikv ⭐16908 (Rust)
-• zitadel/zitadel ⭐15324 (Go)
-• apache/shenyu ⭐8852 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6363 (Rust)
+• etcd-io/etcd ⭐52367 (Go)
+• keycloak/keycloak ⭐37390 (Java)
+• tikv/tikv ⭐16909 (Rust)
+• zitadel/zitadel ⭐15326 (Go)
+• apache/shenyu ⭐8853 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6367 (Rust)
 • apache/maven ⭐5376 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2131 (TypeScript)
 • rust-vmm/rust-vmm ⭐132 (Rust)
@@ -65,6 +65,9 @@ TypeScript            11.1% ██████
 
 🔀 **5** merged PRs across 4 repos
 
+• [#12753](https://github.com/apache/maven/pull/12753) — fix(api-core): properly implement Clock.withZone()
+  ↳ *apache/maven*
+
 • [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
   ↳ *apache/shenyu*
 
@@ -73,9 +76,6 @@ TypeScript            11.1% ██████
 
 • [#8770](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8770) — vmm: Set reserve=on by default when hugepages=on
   ↳ *cloud-hypervisor/cloud-hypervisor*
-
-• [#12753](https://github.com/apache/maven/pull/12753) — fix(api-core): properly implement Clock.withZone()
-  ↳ *apache/maven*
 
 • [#51635](https://github.com/keycloak/keycloak/pull/51635) — fix: OIDC client registration scope handling auth 
   ↳ *keycloak/keycloak*
