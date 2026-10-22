@@ -12,7 +12,7 @@
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🗂️ 9 repos</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">💬 81 commits</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔀 5 merged PRs</span>
-<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 6 open PRs</span>
+<span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🔓 5 open PRs</span>
 <span style="display:inline-block;padding:4px 14px;margin:3px;background:#161b22;color:#e6edf3;border-radius:16px;font-size:13px;line-height:18px;">🐛 2 reported issues</span>
 </div>
 
@@ -42,14 +42,14 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52413 (Go)
-• keycloak/keycloak ⭐37464 (Java)
+• etcd-io/etcd ⭐52416 (Go)
+• keycloak/keycloak ⭐37469 (Java)
 • tikv/tikv ⭐16918 (Rust)
-• zitadel/zitadel ⭐15375 (Go)
-• apache/shenyu ⭐8901 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6410 (Rust)
-• apache/maven ⭐5373 (Java)
-• opensearch-project/OpenSearch-Dashboards ⭐2136 (TypeScript)
+• zitadel/zitadel ⭐15385 (Go)
+• apache/shenyu ⭐8903 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6414 (Rust)
+• apache/maven ⭐5374 (Java)
+• opensearch-project/OpenSearch-Dashboards ⭐2137 (TypeScript)
 • rust-vmm/rust-vmm ⭐142 (Rust)
 ```
 
@@ -90,10 +90,7 @@ TypeScript            11.1% ██████
 
 ### Open Pull Requests
 
-🔓 **6** open PRs across 6 repos
-
-• [#51877](https://github.com/keycloak/keycloak/pull/51877) — fix: Prevent SAML OneTimeUse assertion replay in I
-  ↳ *keycloak/keycloak*
+🔓 **5** open PRs across 5 repos
 
 • [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
   ↳ *opensearch-project/OpenSearch-Dashboards*
