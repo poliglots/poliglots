@@ -42,15 +42,15 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52428 (Go)
-• keycloak/keycloak ⭐37524 (Java)
-• tikv/tikv ⭐16926 (Rust)
-• zitadel/zitadel ⭐15442 (Go)
+• etcd-io/etcd ⭐52429 (Go)
+• keycloak/keycloak ⭐37529 (Java)
+• tikv/tikv ⭐16928 (Rust)
+• zitadel/zitadel ⭐15444 (Go)
 • apache/shenyu ⭐8904 (Java)
 • cloud-hypervisor/cloud-hypervisor ⭐6432 (Rust)
-• apache/maven ⭐5372 (Java)
+• apache/maven ⭐5373 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2135 (TypeScript)
-• rust-vmm/rust-vmm ⭐149 (Rust)
+• rust-vmm/rust-vmm ⭐150 (Rust)
 ```
 
 </div>
@@ -92,11 +92,11 @@ TypeScript            11.1% ██████
 
 🔓 **5** open PRs across 5 repos
 
-• [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
-  ↳ *opensearch-project/OpenSearch-Dashboards*
-
 • [#125](https://github.com/rust-vmm/rust-vmm/pull/125) — ci: consolidate publish workflows into single work
   ↳ *rust-vmm/rust-vmm*
+
+• [#12562](https://github.com/opensearch-project/OpenSearch-Dashboards/pull/12562) — fix(data): use explicit query comparison instead o
+  ↳ *opensearch-project/OpenSearch-Dashboards*
 
 • [#20011](https://github.com/tikv/tikv/pull/20011) — raftstore: pass RaftCmdExtraOpts through local rea
   ↳ *tikv/tikv*
