@@ -43,14 +43,14 @@ TypeScript            11.1% ██████
 
 ```
 • etcd-io/etcd ⭐52443 (Go)
-• keycloak/keycloak ⭐37691 (Java)
-• tikv/tikv ⭐16937 (Rust)
+• keycloak/keycloak ⭐37703 (Java)
+• tikv/tikv ⭐16935 (Rust)
 • zitadel/zitadel ⭐15507 (Go)
-• apache/shenyu ⭐8913 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6461 (Rust)
-• apache/maven ⭐5372 (Java)
+• apache/shenyu ⭐8912 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6462 (Rust)
+• apache/maven ⭐5370 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2142 (TypeScript)
-• rust-vmm/rust-vmm ⭐160 (Rust)
+• rust-vmm/rust-vmm ⭐161 (Rust)
 ```
 
 </div>
@@ -117,13 +117,13 @@ TypeScript            11.1% ██████
 
 ### Reported Issues
 
-🐛 **2** issues (1 open · 1 closed) across 2 repos
+🐛 **2** issues (0 open · 2 closed) across 2 repos
+
+• [❌ #52059](https://github.com/keycloak/keycloak/issues/52059) — Flaky test: org.keycloak.testsuite.forms.ResetPass
+  ↳ *keycloak/keycloak*
 
 • [❌ #7510](https://github.com/apache/shenyu/issues/7510) — [Refactor] Clean up redundant null guard for conte
   ↳ *apache/shenyu*
-
-• [🟢 #52059](https://github.com/keycloak/keycloak/issues/52059) — Flaky test: org.keycloak.testsuite.forms.ResetPass
-  ↳ *keycloak/keycloak*
 
 </div>
 
