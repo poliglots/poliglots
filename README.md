@@ -42,13 +42,13 @@ TypeScript            11.1% ██████
 ### Top Repositories Contributed To
 
 ```
-• etcd-io/etcd ⭐52443 (Go)
-• keycloak/keycloak ⭐37703 (Java)
+• etcd-io/etcd ⭐52444 (Go)
+• keycloak/keycloak ⭐37709 (Java)
 • tikv/tikv ⭐16935 (Rust)
-• zitadel/zitadel ⭐15507 (Go)
-• apache/shenyu ⭐8912 (Java)
-• cloud-hypervisor/cloud-hypervisor ⭐6462 (Rust)
-• apache/maven ⭐5370 (Java)
+• zitadel/zitadel ⭐15515 (Go)
+• apache/shenyu ⭐8913 (Java)
+• cloud-hypervisor/cloud-hypervisor ⭐6465 (Rust)
+• apache/maven ⭐5372 (Java)
 • opensearch-project/OpenSearch-Dashboards ⭐2142 (TypeScript)
 • rust-vmm/rust-vmm ⭐161 (Rust)
 ```
@@ -65,14 +65,14 @@ TypeScript            11.1% ██████
 
 🔀 **5** merged PRs across 4 repos
 
+• [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
+  ↳ *keycloak/keycloak*
+
 • [#12753](https://github.com/apache/maven/pull/12753) — fix(api-core): properly implement Clock.withZone()
   ↳ *apache/maven*
 
 • [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
   ↳ *apache/shenyu*
-
-• [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
-  ↳ *keycloak/keycloak*
 
 • [#8770](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8770) — vmm: Set reserve=on by default when hugepages=on
   ↳ *cloud-hypervisor/cloud-hypervisor*
