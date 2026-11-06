@@ -18,11 +18,11 @@ const SECTION_BUILDERS = {
     start: MARKERS.LANGUAGES.start,
     end: MARKERS.LANGUAGES.end,
   },
-  repoStats: {
-    fetch: fetchTopRepos,
-    start: MARKERS.REPO_STATS.start,
-    end: MARKERS.REPO_STATS.end,
-  },
+  // repoStats: {
+  //   fetch: fetchTopRepos,
+  //   start: MARKERS.REPO_STATS.start,
+  //   end: MARKERS.REPO_STATS.end,
+  // },
   mergedPRs: {
     fetch: fetchMergedPRs,
     start: MARKERS.MERGED_PRS.start,
