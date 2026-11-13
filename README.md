@@ -47,14 +47,14 @@ TypeScript            11.1% ██████
 
 🔀 **5** merged PRs across 4 repos
 
+• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
+  ↳ *apache/shenyu*
+
 • [#52731](https://github.com/keycloak/keycloak/pull/52731) — Admin v2: Mask client secrets for view-only users
   ↳ *keycloak/keycloak*
 
 • [#12753](https://github.com/apache/maven/pull/12753) — fix(api-core): properly implement Clock.withZone()
   ↳ *apache/maven*
-
-• [#7031](https://github.com/apache/shenyu/pull/7031) — fix(kubernetes-controller): guard against null con
-  ↳ *apache/shenyu*
 
 • [#8770](https://github.com/cloud-hypervisor/cloud-hypervisor/pull/8770) — vmm: Set reserve=on by default when hugepages=on
   ↳ *cloud-hypervisor/cloud-hypervisor*
